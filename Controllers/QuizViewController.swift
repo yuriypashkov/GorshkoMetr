@@ -19,6 +19,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet var arrayOfButtons: [UIButton]!
     
     @IBOutlet weak var buttonsView: UIView!
@@ -34,6 +35,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
         updateUI()
     }

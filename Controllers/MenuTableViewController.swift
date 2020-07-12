@@ -11,7 +11,6 @@ import SpriteKit
 
 enum MenuType: Int {
     case home
-    case music
     case concertCounter
     case test
     case game
@@ -26,7 +25,7 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let menuType = MenuType(rawValue: indexPath.row) else { return }
         dismiss(animated: true) {
-            print("Dismiss \(menuType)")
+            //print("Dismiss \(menuType)")
         }
         guard let topViewController = UIApplication.shared.keyWindow?.rootViewController else { return}
         switch menuType {
@@ -40,7 +39,7 @@ class MenuTableViewController: UITableViewController {
             if #available(iOS 13, *) { quizViewController.modalPresentationStyle = .fullScreen }
             topViewController.present(quizViewController, animated: true, completion: nil)
         case .game:
-            print("Game button touch")
+            //print("Game button touch")
             guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") else {return}
             if #available(iOS 13, *) { gameViewController.modalPresentationStyle = .fullScreen }
             topViewController.present(gameViewController, animated: true, completion: nil)

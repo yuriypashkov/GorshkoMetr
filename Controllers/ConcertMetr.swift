@@ -46,6 +46,7 @@ class ConcertMetr: UIViewController {
     }
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var buttonMinus: UIButton!
     @IBOutlet weak var buttonPlus: UIButton!
     
@@ -84,6 +85,8 @@ class ConcertMetr: UIViewController {
         // get
         count = defaults.integer(forKey: "countKey")
         //countLabel.text = String(count)
+        
+        closeButton.layer.cornerRadius = closeButton.frame.width / 2
     }
 
 
