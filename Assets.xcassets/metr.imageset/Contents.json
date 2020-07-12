@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "metr.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
