@@ -72,12 +72,9 @@ class QuestionBank {
     
     init() {
         arrayOfData.shuffle()
-        //for str in arrayOfData {
-        var countOfQuestions = 0
-        while countOfQuestions < 15 {
-            let tempArray = arrayOfData[countOfQuestions].split(separator: "#")
+        for i in 0...6 {
+            let tempArray = arrayOfData[i].split(separator: "#")
             list.append(Question(questionText: String(tempArray[0]), choiceA: String(tempArray[1]), choiceB: String(tempArray[2]), choiceC: String(tempArray[3]), choiceD: String(tempArray[4]), answer: Int(tempArray[5]) ?? 0))
-            countOfQuestions += 1
         }
         //list.shuffle()
     }

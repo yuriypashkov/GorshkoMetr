@@ -1,12 +1,7 @@
-//
-//  QuizViewController.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/12/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import UIKit
+
+var answerBank = [Answer]()
 
 class QuizViewController: UIViewController {
 
@@ -24,6 +19,9 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var buttonsView: UIView!
     
+    @IBOutlet weak var buttonMore: UIButton!
+    
+    
     @IBAction func tapClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -35,6 +33,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonMore.isHidden = true
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
         updateUI()
@@ -56,6 +55,27 @@ class QuizViewController: UIViewController {
         for button in arrayOfButtons {
             button.isEnabled = false
         }
+        
+        //добавляем данные в массив ответов
+        let tempNumber = questionNumber - 1
+        let question = allQuestions.list[tempNumber].question
+        var correctAnswer: String {
+            switch allQuestions.list[tempNumber].correctAnswer {
+            case 1:
+                return allQuestions.list[tempNumber].optionA
+            case 2:
+                return allQuestions.list[tempNumber].optionB
+            case 3:
+                return allQuestions.list[tempNumber].optionC
+            case 4:
+                return allQuestions.list[tempNumber].optionD
+            default:
+                return "none"
+            }
+        }
+        let userAnswer = sender.currentTitle!
+        //print("\(question) AND \(correctAnswer) AND \(userAnswer)")
+        answerBank.append(Answer(question: question, correctAnswer: correctAnswer, userAnswer: userAnswer))
         
         updateQuestion()
         updateUI()
@@ -79,7 +99,7 @@ class QuizViewController: UIViewController {
             selectedAnswer = allQuestions.list[questionNumber].correctAnswer
             questionNumber += 1
         } else {
-            buttonsView.isHidden = true
+            //buttonsView.isHidden = true
             let result = Float (score) / Float(allQuestions.list.count) * 100
             var status = "none"
             switch result {
@@ -94,6 +114,11 @@ class QuizViewController: UIViewController {
             Поздравляем! Вы ответили правильно на \(score) из \(allQuestions.list.count) вопросов.\n
             Ваш титул - \(status)
             """
+            optionA.isHidden = true
+            optionB.isHidden = true
+            optionC.isHidden = true
+            optionD.isHidden = true
+            buttonMore.isHidden = false
         }
     }
     
