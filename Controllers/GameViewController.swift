@@ -1,10 +1,3 @@
-//
-//  GameViewController.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/20/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import UIKit
 import SpriteKit
@@ -56,18 +49,16 @@ class GameViewController: UIViewController, TransitionDelegate {
         addingButton(name: "controlRightBottom", position: CGPoint(x: 1800, y: 100))
 
         //adding test opora1 left top
-        Block(position: CGPoint(x: 200, y: 800), rotation: -.pi / 6).addTo(parent: scene)
-//        let blockLeftTop = Block(position: CGPoint(x: 200, y: 800), rotation: -.pi / 6)
-//        scene.addChild(blockLeftTop)
+        Block(position: CGPoint(x: 150, y: 800), rotation: -.pi / 6).addTo(parent: scene)
 
         //adding test opora2 left bottom
-        Block(position: CGPoint(x: 200, y: 500), rotation: -.pi / 4).addTo(parent: scene)
+        Block(position: CGPoint(x: 150, y: 500), rotation: -.pi / 4).addTo(parent: scene)
 
         //adding test opora3 right bottom
-        Block(position: CGPoint(x: 1700, y: 500), rotation: .pi / 4).addTo(parent: scene)
+        Block(position: CGPoint(x: 1750, y: 500), rotation: .pi / 4).addTo(parent: scene)
         
         //adding test opora4 right top
-        Block(position: CGPoint(x: 1700, y: 800), rotation: .pi / 6).addTo(parent: scene)
+        Block(position: CGPoint(x: 1750, y: 800), rotation: .pi / 6).addTo(parent: scene)
         
         // get score
         score = defaults.integer(forKey: "scoreKey")
@@ -84,7 +75,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         let skView = view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
-        skView.showsPhysics = true
+//        skView.showsPhysics = true
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)
         
@@ -96,7 +87,7 @@ class GameViewController: UIViewController, TransitionDelegate {
     }
     
     func addingButton(name: String, position: CGPoint) {
-        let button = SKShapeNode(circleOfRadius: 60)
+        let button = SKShapeNode(circleOfRadius: 80)
         button.position = position
         button.fillColor = .yellow
         button.zPosition = 3

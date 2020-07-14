@@ -20,20 +20,32 @@ struct CollisionCategory {
 }
 
 class GameScene: SKScene {
+
+    var target: TargetObject!
     
-    var testObject: SKShapeNode!
     var testSquare: SKShapeNode!
-    let tupleOfRespawn: [(CGFloat, CGFloat)] = [(150,900),(150,700),(1800,700),(1800,900)]
-    let arrayOfSquares: [CGPoint] = [CGPoint(x: 400, y: 800), CGPoint(x: 400, y: 400), CGPoint(x: 1520, y: 400), CGPoint(x: 1520, y: 800)]
+    
+    let arrayOfRespawn: [CGPoint] = [CGPoint(x: 180, y: 900),
+                                     CGPoint(x: 180, y: 700),
+                                     CGPoint(x: 1700, y: 700),
+                                     CGPoint(x: 1700, y: 900),]
+    let arrayOfSquares: [CGPoint] = [CGPoint(x: 400, y: 800),
+                                     CGPoint(x: 400, y: 400),
+                                     CGPoint(x: 1520, y: 400),
+                                     CGPoint(x: 1520, y: 800)]
+    let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "zombie", reward: 1, mass: 5, restitution: 0.1),
+                                          TargetObject(imageName: "skull", reward: 5, mass: 10, restitution: 0.5),
+                                          TargetObject(imageName: "bat", reward: 10, mass: 30, restitution: 0.9)]
+    
     
      override func didMove(to view: SKView) {
 
         // adding physical
         physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         physicsWorld.contactDelegate = self
-        //adding test ball
-        guard let randStartElement = tupleOfRespawn.randomElement() else {return}
-        addingTestBall(x: randStartElement.0, y: randStartElement.1)
+        //adding target
+        guard let randStartElement = arrayOfRespawn.randomElement() else { return }
+        addTarget(x: randStartElement.x, y: randStartElement.y)
         
         //adding a test square
         testSquare = SKShapeNode(rect: CGRect(x: -25, y: -25, width: 50, height: 50))
@@ -49,23 +61,15 @@ class GameScene: SKScene {
         
     }
     
-    func addingTestBall(x: CGFloat, y: CGFloat) {
-        
-        testObject = SKShapeNode(circleOfRadius: 60)
-        testObject.zPosition = 2
-        testObject.position = CGPoint(x: x, y: y)
-        testObject.fillColor = .systemRed
-        testObject.physicsBody = SKPhysicsBody(circleOfRadius: 60)
-        testObject.physicsBody?.isDynamic = true
-        testObject.physicsBody?.mass = 5
-        testObject.name = "ball"
-        testObject.physicsBody?.categoryBitMask = CollisionCategory.ball
-        testObject.physicsBody?.contactTestBitMask = CollisionCategory.square
-        self.addChild(testObject)
+    func addTarget(x: CGFloat, y: CGFloat) {
+        target = arrayOfTargets.randomElement()
+        target.position = CGPoint(x: x, y: y)
+        target.physicsBody?.categoryBitMask = CollisionCategory.ball
+        target.physicsBody?.contactTestBitMask = CollisionCategory.square
+        self.addChild(target)
     }
     
     var currentPosition: CGPoint!
-    var currentlyTouching = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
@@ -87,21 +91,21 @@ class GameScene: SKScene {
             case "controlRightBottom":
                 testSquare.position = arrayOfSquares[2]
             default:
-                currentlyTouching = true
+                return
             }
         }
     }
     
-    func updateBall() {
-        testObject.removeFromParent()
-        guard let randElement = tupleOfRespawn.randomElement() else {return}
-        addingTestBall(x: randElement.0, y: randElement.1)
+    func updateTarget() {
+        target.removeFromParent()
+        guard let randElement = arrayOfRespawn.randomElement() else {return}
+        addTarget(x: randElement.x, y: randElement.y)
     }
     
     
     override func update(_ currentTime: TimeInterval) {
-        if testObject.position.y <= 0 {
-            updateBall()
+        if target.position.y <= 0 {
+            updateTarget()
         }
     }
     
@@ -112,9 +116,9 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         switch contactMask {
         case CollisionCategory.ball | CollisionCategory.square:
-            updateBall()
             guard let delegate = self.delegate else { return }
-            (delegate as! TransitionDelegate).score += 1
+            (delegate as! TransitionDelegate).score += target.reward
+            updateTarget()
         default:
             return
         }
