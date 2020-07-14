@@ -34,6 +34,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonMore.isHidden = true
+        answerBank.removeAll()
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
         updateUI()
@@ -131,6 +132,7 @@ class QuizViewController: UIViewController {
         questionNumber = 0
         updateQuestion()
         updateUI()
+        answerBank.removeAll()
     }
     
 }

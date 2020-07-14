@@ -13,6 +13,11 @@ class ResultCell: UITableViewCell {
         questionTextLabel.text = data.question
         userAnswerLabel.text = data.userAnswer
         correctAnswerLabel.text = data.correctAnswer
+        if data.correctAnswer == data.userAnswer {
+            userAnswerLabel.textColor = .systemGreen
+        } else {
+            userAnswerLabel.textColor = .systemRed
+        }
     }
 
 }
