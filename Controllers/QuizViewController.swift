@@ -21,6 +21,11 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var buttonMore: UIButton!
     
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    @IBAction func refreshButtonTap(_ sender: UIButton) {
+        restartQuiz()
+    }
     
     @IBAction func tapClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -33,7 +38,10 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         buttonMore.isHidden = true
+        refreshButton.isHidden = true
+        
         answerBank.removeAll()
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
@@ -115,12 +123,17 @@ class QuizViewController: UIViewController {
             Поздравляем! Вы ответили правильно на \(score) из \(allQuestions.list.count) вопросов.\n
             Ваш титул - \(status)
             """
-            optionA.isHidden = true
-            optionB.isHidden = true
-            optionC.isHidden = true
-            optionD.isHidden = true
-            buttonMore.isHidden = false
+            setButtonsHidden(state: true)
         }
+    }
+    
+    func setButtonsHidden(state: Bool) {
+        optionA.isHidden = state
+        optionB.isHidden = state
+        optionC.isHidden = state
+        optionD.isHidden = state
+        buttonMore.isHidden = !state
+        refreshButton.isHidden = !state
     }
     
     func updateUI() {
@@ -128,11 +141,13 @@ class QuizViewController: UIViewController {
     }
     
     func restartQuiz() {
+        allQuestions.createListOfData(questionCount: 7)
         score = 0
         questionNumber = 0
         updateQuestion()
         updateUI()
         answerBank.removeAll()
+        setButtonsHidden(state: false)
     }
     
 }

@@ -14,6 +14,7 @@ enum MenuType: Int {
     case concertCounter
     case test
     case game
+    case achivements
 }
 
 class MenuTableViewController: UITableViewController {
@@ -21,6 +22,7 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let menuType = MenuType(rawValue: indexPath.row) else { return }
@@ -43,9 +45,12 @@ class MenuTableViewController: UITableViewController {
             guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") else {return}
             if #available(iOS 13, *) { gameViewController.modalPresentationStyle = .fullScreen }
             topViewController.present(gameViewController, animated: true, completion: nil)
-            
+        case .achivements:
+            guard let achivementsViewController = storyboard?.instantiateViewController(withIdentifier: "AchivementsViewController") else { return}
+            if #available(iOS 13, *) { achivementsViewController.modalPresentationStyle = .fullScreen }
+            topViewController.present(achivementsViewController, animated: true, completion: nil)
         default:
-            print("Any")
+            return
         }
     }
     
