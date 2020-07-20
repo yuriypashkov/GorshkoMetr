@@ -1,10 +1,3 @@
-//
-//  GameScene.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/20/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import Foundation
 import SpriteKit

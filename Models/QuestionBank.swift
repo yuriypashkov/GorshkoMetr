@@ -71,8 +71,13 @@ class QuestionBank {
     ]
     
     init() {
+        createListOfData(questionCount: 7)
+    }
+    
+    func createListOfData(questionCount: Int) {
+        list.removeAll()
         arrayOfData.shuffle()
-        for i in 0...6 {
+        for i in 0..<questionCount {
             let tempArray = arrayOfData[i].split(separator: "#")
             list.append(Question(questionText: String(tempArray[0]), choiceA: String(tempArray[1]), choiceB: String(tempArray[2]), choiceC: String(tempArray[3]), choiceD: String(tempArray[4]), answer: Int(tempArray[5]) ?? 0))
         }
