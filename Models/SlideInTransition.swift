@@ -1,10 +1,3 @@
-//
-//  SlideInTransition.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/11/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import UIKit
 
@@ -22,7 +15,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         let containerView = transitionContext.containerView
         
-        let finalWidth = toViewController.view.bounds.width * 0.8
+        let finalWidth = toViewController.view.bounds.width * 0.7
         let finalHeight = toViewController.view.bounds.height
         
         if isPresenting {

@@ -23,7 +23,8 @@ class GameViewController: UIViewController, TransitionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scene = GameScene(size: CGSize(width: 1920, height: 1080))
-        scene.scaleMode = .aspectFill
+       // scene = GameScene(size: view.frame.size)
+        scene.scaleMode = .aspectFit // пока так фиксим проблему разных соотношений сторон на разных мобилах
         scene.anchorPoint = CGPoint(x: 0, y: 0)
         scene.delegate = self as TransitionDelegate
   
