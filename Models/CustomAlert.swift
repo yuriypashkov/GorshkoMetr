@@ -19,7 +19,4 @@ class CustomAlert: UIView {
         achievementImage.image = UIImage(named: imageName)
     }
     
-
-    
-    
 }

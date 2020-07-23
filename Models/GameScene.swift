@@ -15,10 +15,17 @@ struct CollisionCategory {
 class GameScene: SKScene {
     
     let defaults = UserDefaults.standard
+    // achiviments vars
     var itemsLost: Int = 0 {
         didSet {
             defaults.set(itemsLost, forKey: "itemsLost")
         }
+    }
+    var trashItems: Int = 0 {
+        didSet {
+            defaults.set(trashItems, forKey: "trashItems")
+        }
+        
     }
 
     var target: TargetObject!
@@ -33,9 +40,9 @@ class GameScene: SKScene {
                                      CGPoint(x: 400, y: 400),
                                      CGPoint(x: 1520, y: 400),
                                      CGPoint(x: 1520, y: 800)]
-    let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "zombie", reward: 1, mass: 5, restitution: 0.1),
-                                          TargetObject(imageName: "skull", reward: 5, mass: 10, restitution: 0.5),
-                                          TargetObject(imageName: "bat", reward: 10, mass: 30, restitution: 0.9)]
+    let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "zombie", reward: 1, mass: 5, restitution: 0.1, isGoodItem: true),
+                                          TargetObject(imageName: "skull", reward: 5, mass: 10, restitution: 0.5, isGoodItem: true),
+                                          TargetObject(imageName: "bat", reward: -10, mass: 30, restitution: 0.9, isGoodItem: false)]
     
     
      override func didMove(to view: SKView) {
@@ -61,6 +68,8 @@ class GameScene: SKScene {
         
         //get itemsLost
         itemsLost = defaults.integer(forKey: "itemsLost")
+        
+        //get trashItems
         
     }
     
@@ -108,7 +117,9 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if target.position.y <= 0 {
-            itemsLost += 1
+            if target.isGoodItem {
+                itemsLost += 1
+            }
             updateTarget()
         }
     }
@@ -122,6 +133,9 @@ extension GameScene: SKPhysicsContactDelegate {
         case CollisionCategory.ball | CollisionCategory.square:
             guard let delegate = self.delegate else { return }
             (delegate as! TransitionDelegate).score += target.reward
+            if !target.isGoodItem {
+                trashItems += 1
+            }
             updateTarget()
         default:
             return

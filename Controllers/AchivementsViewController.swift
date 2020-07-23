@@ -22,6 +22,7 @@ class AchivementsViewController: UIViewController {
     @IBOutlet weak var answersCountLabel: UILabel!
     @IBOutlet weak var launchCountLabel: UILabel!
     @IBOutlet weak var itemsLostLabel: UILabel!
+    @IBOutlet weak var trashItemsLabel: UILabel!
     
     
     @IBOutlet weak var achievmentImageViewOne: UIImageView!
@@ -53,6 +54,8 @@ class AchivementsViewController: UIViewController {
         launchCountLabel.text = defaults.string(forKey: "launchCount")
         let itemsLost = defaults.integer(forKey: "itemsLost")
         itemsLostLabel.text = String(itemsLost)
+        let trashItems = defaults.integer(forKey: "trashItems")
+        trashItemsLabel.text = String(trashItems)
         
         // test tap on image
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AchivementsViewController.tap(_:)))

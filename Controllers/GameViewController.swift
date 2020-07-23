@@ -70,7 +70,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         scoreLabel.fontSize = 60
         scoreLabel.fontColor = .systemYellow
         scoreLabel.zPosition = 3
-        scoreLabel.fontName = "Avenir Next"
+        scoreLabel.fontName = "CyrillicOldEditedbyme-Bold"
         scene.addChild(scoreLabel)
         
         let skView = view as! SKView

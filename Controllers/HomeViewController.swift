@@ -19,8 +19,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("done")
-        // Do any additional setup after loading the view.
+        // print app fontnames
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
     }
     
     override var shouldAutorotate: Bool {
