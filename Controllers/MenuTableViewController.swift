@@ -1,10 +1,3 @@
-//
-//  MenuTableViewController.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/11/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import UIKit
 import SpriteKit

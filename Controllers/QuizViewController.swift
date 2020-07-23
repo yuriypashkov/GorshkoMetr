@@ -23,6 +23,7 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var refreshButton: UIButton!
     
+    
     @IBAction func refreshButtonTap(_ sender: UIButton) {
         restartQuiz()
     }
@@ -31,9 +32,30 @@ class QuizViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    let defaults = UserDefaults.standard
+    
     var allQuestions = QuestionBank()
     var questionNumber = 0
     var score = 0
+    
+    var correctAnswers: Int = 0 {
+        didSet {
+            defaults.set(correctAnswers, forKey: "correctAnswers")
+        }
+    }
+    
+    var quizPassed: Int = 0 {
+        didSet {
+            defaults.set(quizPassed, forKey: "quizPassed")
+        }
+    }
+    
+    var answersCount: Int = 0 {
+        didSet {
+            defaults.set(answersCount, forKey: "answersCount")
+        }
+    }
+    
     var selectedAnswer = 0
     
     override func viewDidLoad() {
@@ -46,6 +68,15 @@ class QuizViewController: UIViewController {
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
         updateUI()
+        
+        //get correctAnswers
+        correctAnswers = defaults.integer(forKey: "correctAnswers")
+        //get quizPassed
+        quizPassed = defaults.integer(forKey: "quizPassed")
+        //get answersCount
+        answersCount = defaults.integer(forKey: "answersCount")
+    
+        
     }
     
     override var shouldAutorotate: Bool {
@@ -54,8 +85,12 @@ class QuizViewController: UIViewController {
 
     
     @IBAction func answerPressed(_ sender: UIButton) {
+        
+        answersCount += 1
+        
         if sender.tag == selectedAnswer {
             score += 1
+            correctAnswers += 1
             sender.backgroundColor = .systemGreen
         } else {
             sender.backgroundColor = .systemRed
@@ -124,6 +159,8 @@ class QuizViewController: UIViewController {
             Ваш титул - \(status)
             """
             setButtonsHidden(state: true)
+            quizPassed += 1
+            
         }
     }
     

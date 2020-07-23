@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/1/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
 
 import UIKit
 
@@ -15,6 +8,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // application launch count
+        let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
+        UserDefaults.standard.set(currentCount + 1, forKey: "launchCount")
+        
         return true
     }
 
@@ -29,9 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+
     }
 
 

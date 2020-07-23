@@ -13,6 +13,13 @@ struct CollisionCategory {
 }
 
 class GameScene: SKScene {
+    
+    let defaults = UserDefaults.standard
+    var itemsLost: Int = 0 {
+        didSet {
+            defaults.set(itemsLost, forKey: "itemsLost")
+        }
+    }
 
     var target: TargetObject!
     
@@ -51,6 +58,9 @@ class GameScene: SKScene {
         testSquare.position = arrayOfSquares.randomElement()!
         testSquare.name = "square"
         self.addChild(testSquare)
+        
+        //get itemsLost
+        itemsLost = defaults.integer(forKey: "itemsLost")
         
     }
     
@@ -98,6 +108,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if target.position.y <= 0 {
+            itemsLost += 1
             updateTarget()
         }
     }
