@@ -25,7 +25,20 @@ class AchivementsViewController: UIViewController {
     @IBOutlet weak var trashItemsLabel: UILabel!
     
     
-    @IBOutlet weak var achievmentImageViewOne: UIImageView!
+    @IBOutlet var achivementButtons: [UIButton]!
+    
+    @IBAction func achivmentButtonClick(_ sender: UIButton) {
+        let achivement = achivementsArray[sender.tag]
+        setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message)
+        animateIn()
+    }
+    
+    var achivementsArray: [Achivement] = [
+        Achivement(imageName: "bat", title: "КонцертМастер", message: "Ты невероятно хорош, ибо посмотрел концерты КиШа 10 или более раз", isAchived: false),
+        Achivement(imageName: "skull", title: "Черепность", message: "Я нахер что сюда писать, придумаем потом", isAchived: false),
+        Achivement(imageName: "zombie", title: "Зомбийность", message: "Да, потом придумаем", isAchived: false)
+    ]
+
     
     private var alertView: CustomAlert!
     
@@ -57,13 +70,21 @@ class AchivementsViewController: UIViewController {
         let trashItems = defaults.integer(forKey: "trashItems")
         trashItemsLabel.text = String(trashItems)
         
-        // test tap on image
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AchivementsViewController.tap(_:)))
-        achievmentImageViewOne.isUserInteractionEnabled = true
-        achievmentImageViewOne.addGestureRecognizer(tapGestureRecognizer)
-        
         //setup blur
         setupVisualEffectView()
+        
+        //setup achivements
+        if countKey >= 10 {
+            achivementsArray[0].isAchived = true
+        }
+        
+        //setup achived buttons
+        for button in achivementButtons {
+            let achivement = achivementsArray[button.tag]
+            if achivement.isAchived {
+                button.isEnabled = true
+            }
+        }
 
     }
     
@@ -87,12 +108,12 @@ class AchivementsViewController: UIViewController {
         }
     }
     
-    func setAlert() {
+    func setAlert(imageName: String, title: String, message: String) {
         alertView = Bundle.main.loadNibNamed("CustomAlert", owner: self, options: nil)?.first as? CustomAlert
         view.addSubview(alertView)
         alertView.center = view.center
         alertView.okButton.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
-        alertView.set(title: "My Title", message: "My Message", imageName: "bat")
+        alertView.set(title: title, message: message, imageName: imageName)
     }
     
     
@@ -100,14 +121,7 @@ class AchivementsViewController: UIViewController {
         UIView.transition(with: self.view, duration: 0.3, options: [.transitionCrossDissolve], animations: {
             self.alertView.removeFromSuperview()
         }, completion: nil)
-        //alertView.removeFromSuperview()
         visualEffectView.alpha = 0
     }
-    
-    @objc func tap(_ sender:AnyObject) {
-        setAlert()
-        animateIn()
-    }
-
     
 }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "g_down_left.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

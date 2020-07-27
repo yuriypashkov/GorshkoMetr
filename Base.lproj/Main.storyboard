@@ -362,15 +362,27 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-Ln-7Oa">
                                                         <rect key="frame" x="10" y="10" width="355" height="100"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bat" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-2O-1vN">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhC-Yd-BbN">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98.5" height="100"/>
-                                                            </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skull" translatesAutoresizingMaskIntoConstraints="NO" id="TAc-Dv-Lvx">
+                                                                <state key="normal" image="bat"/>
+                                                                <connections>
+                                                                    <action selector="achivmentButtonClick:" destination="5yW-DC-ORr" eventType="touchUpInside" id="A1Q-yI-v4C"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-qb-Km4">
                                                                 <rect key="frame" x="128.5" y="0.0" width="98" height="100"/>
-                                                            </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zombie" translatesAutoresizingMaskIntoConstraints="NO" id="SiV-EV-nEV">
+                                                                <state key="normal" image="skull"/>
+                                                                <connections>
+                                                                    <action selector="achivmentButtonClick:" destination="5yW-DC-ORr" eventType="touchUpInside" id="nyY-Ox-Bw1"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-DN-XYR">
                                                                 <rect key="frame" x="256.5" y="0.0" width="98.5" height="100"/>
-                                                            </imageView>
+                                                                <state key="normal" title="Button" image="zombie"/>
+                                                                <connections>
+                                                                    <action selector="achivmentButtonClick:" destination="5yW-DC-ORr" eventType="touchUpInside" id="bTb-UW-8PI"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="7Rd-ym-wwY"/>
@@ -420,7 +432,6 @@
                     </view>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
-                        <outlet property="achievmentImageViewOne" destination="l5q-2O-1vN" id="QGK-KU-NpU"/>
                         <outlet property="answersCountLabel" destination="PMv-44-5Xb" id="rkD-ce-V7l"/>
                         <outlet property="closeButton" destination="fru-dy-Npy" id="tSw-Uw-06r"/>
                         <outlet property="concertsCount" destination="Ie2-Qv-VaL" id="ond-f8-atb"/>
@@ -430,6 +441,9 @@
                         <outlet property="quizPassedLabel" destination="VZt-al-a7t" id="tPy-cb-IKu"/>
                         <outlet property="scoreCount" destination="LXZ-Ub-qLO" id="Cjn-md-v7F"/>
                         <outlet property="trashItemsLabel" destination="ymE-ER-PgU" id="ArP-kI-u7p"/>
+                        <outletCollection property="achivementButtons" destination="AhC-Yd-BbN" collectionClass="NSMutableArray" id="dTj-js-vKM"/>
+                        <outletCollection property="achivementButtons" destination="sAe-qb-Km4" collectionClass="NSMutableArray" id="bFL-32-aYg"/>
+                        <outletCollection property="achivementButtons" destination="7Rg-DN-XYR" collectionClass="NSMutableArray" id="ytQ-3Q-CuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyv-tL-lhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
