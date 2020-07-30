@@ -12,12 +12,12 @@ class Block: SKShapeNode {
     
     init(position: CGPoint, rotation: CGFloat) {
         super.init()
-        let block = SKShapeNode(rect: CGRect(x: -200, y: -25, width: 400, height: 50))
+        let block = SKShapeNode(rect: CGRect(x: -425, y: -20, width: 850, height: 40))
         block.zPosition = 2
-        block.fillColor = .gray
+        block.fillColor = .clear
         block.position = position
         block.zRotation = rotation
-        block.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 400, height: 50))
+        block.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 850, height: 40))
         block.physicsBody?.isDynamic = false
         addChild(block)
     }

@@ -29,8 +29,9 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.delegate = self as TransitionDelegate
   
         //adding background
-        let background = Sprite(named: "back", x: 0, y: 0, z: 0, size: scene.size)
-        scene.addChild(background)
+        //let background = Sprite(named: "back", x: 0, y: 0, z: 0, size: scene.size)
+        //scene.addChild(background)
+        scene.backgroundColor = .white
         
         // add exit button
         let exitButton = SKShapeNode()
@@ -44,22 +45,35 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.addChild(exitButton)
         
         //adding buttons for control
-        addingButton(name: "controlLeftTop", position: CGPoint(x: 120, y: 300))
-        addingButton(name: "controlLeftBottom", position: CGPoint(x: 120, y: 100))
-        addingButton(name: "controlRightTop", position: CGPoint(x: 1800, y: 300))
-        addingButton(name: "controlRightBottom", position: CGPoint(x: 1800, y: 100))
+        addingButton(imageName: "button_left_up", name: "controlLeftTop", position: CGPoint(x: 50, y: 250))
+        addingButton(imageName: "button_left_down", name: "controlLeftBottom", position: CGPoint(x: 50, y: 50))
+        addingButton(imageName: "button_right_up", name: "controlRightTop", position: CGPoint(x: 1700, y: 250))
+        addingButton(imageName: "button_right_down", name: "controlRightBottom", position: CGPoint(x: 1700, y: 50))
 
         //adding test opora1 left top
-        Block(position: CGPoint(x: 150, y: 800), rotation: -.pi / 6).addTo(parent: scene)
+        Block(position: CGPoint(x: 160, y: 830), rotation: -.pi / 6.5).addTo(parent: scene)
 
         //adding test opora2 left bottom
-        Block(position: CGPoint(x: 150, y: 500), rotation: -.pi / 4).addTo(parent: scene)
+        Block(position: CGPoint(x: 210, y: 530), rotation: -.pi / 6.5).addTo(parent: scene)
 
         //adding test opora3 right bottom
-        Block(position: CGPoint(x: 1750, y: 500), rotation: .pi / 4).addTo(parent: scene)
+        Block(position: CGPoint(x: 1760, y: 520), rotation: .pi / 6.5).addTo(parent: scene)
         
         //adding test opora4 right top
-        Block(position: CGPoint(x: 1750, y: 800), rotation: .pi / 6).addTo(parent: scene)
+        Block(position: CGPoint(x: 1760, y: 820), rotation: .pi / 6.5).addTo(parent: scene)
+        
+        // new blocks
+        let leftTopBlock = Sprite(named: "branch_up_left", x: 0, y: 600, z: 2)
+        scene.addChild(leftTopBlock)
+        
+        let leftBottomBlock = Sprite(named: "branch_down_left", x: 0, y: 300, z: 2)
+        scene.addChild(leftBottomBlock)
+        
+        let rightTopBlock = Sprite(named: "branch_up_right", x: 1380, y: 600, z: 2)
+        scene.addChild(rightTopBlock)
+        
+        let rightBottomBlock = Sprite(named: "branch_down_right", x: 1380, y: 300, z: 2)
+        scene.addChild(rightBottomBlock)
         
         // get score
         score = defaults.integer(forKey: "scoreKey")
@@ -73,6 +87,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         scoreLabel.fontName = "CyrillicOldEditedbyme-Bold"
         scene.addChild(scoreLabel)
         
+
         let skView = view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
@@ -87,13 +102,17 @@ class GameViewController: UIViewController, TransitionDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func addingButton(name: String, position: CGPoint) {
-        let button = SKShapeNode(circleOfRadius: 80)
-        button.position = position
-        button.fillColor = .yellow
-        button.zPosition = 3
+    func addingButton(imageName: String, name: String, position: CGPoint) {
+//        let button = SKShapeNode(circleOfRadius: 80)
+//        button.position = position
+//        button.fillColor = .yellow
+//        button.zPosition = 3
+//        button.name = name
+//        scene.addChild(button)
+        let button = Sprite(named: imageName, x: position.x, y: position.y, z: 3)
         button.name = name
         scene.addChild(button)
+        
     }
     
 }

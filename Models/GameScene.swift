@@ -15,6 +15,7 @@ struct CollisionCategory {
 class GameScene: SKScene {
     
     let defaults = UserDefaults.standard
+    
     // achiviments vars
     var itemsLost: Int = 0 {
         didSet {
@@ -36,14 +37,15 @@ class GameScene: SKScene {
                                      CGPoint(x: 180, y: 700),
                                      CGPoint(x: 1700, y: 700),
                                      CGPoint(x: 1700, y: 900),]
-    let arrayOfSquares: [CGPoint] = [CGPoint(x: 400, y: 800),
-                                     CGPoint(x: 400, y: 400),
-                                     CGPoint(x: 1520, y: 400),
-                                     CGPoint(x: 1520, y: 800)]
+    let arrayOfSquares: [CGPoint] = [CGPoint(x: 650, y: 650),
+                                     CGPoint(x: 650, y: 400),
+                                     CGPoint(x: 1280, y: 380),
+                                     CGPoint(x: 1250, y: 650)]
     let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "zombie", reward: 1, mass: 5, restitution: 0.1, isGoodItem: true),
                                           TargetObject(imageName: "skull", reward: 5, mass: 10, restitution: 0.5, isGoodItem: true),
                                           TargetObject(imageName: "bat", reward: -10, mass: 30, restitution: 0.9, isGoodItem: false)]
     
+    var gorshok: Sprite!
     
      override func didMove(to view: SKView) {
 
@@ -62,7 +64,7 @@ class GameScene: SKScene {
         testSquare.physicsBody?.isDynamic = false
         testSquare.physicsBody?.categoryBitMask = CollisionCategory.square
         testSquare.physicsBody?.contactTestBitMask = CollisionCategory.ball
-        testSquare.position = arrayOfSquares.randomElement()!
+        testSquare.position = arrayOfSquares[1]
         testSquare.name = "square"
         self.addChild(testSquare)
         
@@ -70,7 +72,12 @@ class GameScene: SKScene {
         itemsLost = defaults.integer(forKey: "itemsLost")
         
         //get trashItems
+        trashItems = defaults.integer(forKey: "trashItems")
         
+        //add gorshok
+        gorshok = Sprite(named: "g_down_left", x: 960, y: 440, z: 3)
+        gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.addChild(gorshok)
     }
     
     func addTarget(x: CGFloat, y: CGFloat) {
@@ -96,16 +103,27 @@ class GameScene: SKScene {
                 (delegate as! TransitionDelegate).dismissVC()
             case "controlLeftTop":
                 testSquare.position = arrayOfSquares[0]
+                gorshokUpdate(imageName: "g_up_left")
             case "controlLeftBottom":
                 testSquare.position = arrayOfSquares[1]
+                gorshokUpdate(imageName: "g_down_left")
             case "controlRightTop":
                 testSquare.position = arrayOfSquares[3]
+                gorshokUpdate(imageName: "g_up_right")
             case "controlRightBottom":
                 testSquare.position = arrayOfSquares[2]
+                gorshokUpdate(imageName: "g_down_right")
             default:
                 return
             }
         }
+    }
+    
+    func gorshokUpdate(imageName: String) {
+        gorshok.removeFromParent()
+        gorshok = Sprite(named: imageName, x: 960, y: 440, z: 3)
+        gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        addChild(gorshok)
     }
     
     func updateTarget() {
