@@ -1,10 +1,12 @@
 
 import UIKit
 
-//var answerBank = [Answer]()
+var answerBank = [Answer]()
 
-class QuizViewController: UIViewController {
+class NewQuizViewController: UIViewController {
 
+    @IBOutlet weak var buttonsStackView: UIStackView!
+    
     @IBOutlet weak var questionCounter: UILabel!
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -14,23 +16,13 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
     
-    @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet var arrayOfButtons: [UIButton]!
-    
-    @IBOutlet weak var buttonsView: UIView!
-    
+    @IBOutlet weak var answersStackView: UIStackView!
     @IBOutlet weak var buttonMore: UIButton!
-    
     @IBOutlet weak var refreshButton: UIButton!
     
+    @IBOutlet weak var closeImage: UIImageView!
     
-    @IBAction func refreshButtonTap(_ sender: UIButton) {
-        restartQuiz()
-    }
-    
-    @IBAction func tapClose(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet var arrayOfButtons: [UIButton]!
     
     let defaults = UserDefaults.standard
     
@@ -58,14 +50,30 @@ class QuizViewController: UIViewController {
     
     var selectedAnswer = 0
     
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    
+    @IBAction func refreshButtonTap(_ sender: UIButton) {
+        restartQuiz()
+    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // уменьшим высоту блока с кнопками для SE первого поколения, на остальных норм вроде скейлится
+        if UIScreen.main.bounds.height < 667 {
+            if let height = (buttonsStackView.constraints.filter{ $0.firstAttribute == .height}.first) {
+                height.constant = 150
+            }
+        }
         
         buttonMore.isHidden = true
         refreshButton.isHidden = true
         
         answerBank.removeAll()
-        closeButton.layer.cornerRadius = closeButton.frame.width / 2
         updateQuestion()
         updateUI()
         
@@ -75,30 +83,39 @@ class QuizViewController: UIViewController {
         quizPassed = defaults.integer(forKey: "quizPassed")
         //get answersCount
         answersCount = defaults.integer(forKey: "answersCount")
-    
+        
+        //recognizer on close image
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTap(_:)))
+        closeImage.isUserInteractionEnabled = true
+        closeImage.addGestureRecognizer(tapGestureRecognizer)
+        
+        //autoshrink on buttons
+        for button in arrayOfButtons {
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
         
     }
     
-    override var shouldAutorotate: Bool {
-        return false
+    @objc func imageTap(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
-
     
     @IBAction func answerPressed(_ sender: UIButton) {
-        
         answersCount += 1
         
         if sender.tag == selectedAnswer {
             score += 1
             correctAnswers += 1
-            sender.backgroundColor = .systemGreen
+            //sender.backgroundColor = .systemGreen
+            sender.setTitleColor(.systemGreen, for: .normal)
         } else {
-            sender.backgroundColor = .systemRed
+            //sender.backgroundColor = .systemRed
+            sender.setTitleColor(.systemRed, for: .normal)
         }
         
-        for button in arrayOfButtons {
-            button.isEnabled = false
-        }
+//        for button in arrayOfButtons {
+//            button.isEnabled = false
+//        }
         
         //добавляем данные в массив ответов
         let tempNumber = questionNumber - 1
@@ -118,20 +135,21 @@ class QuizViewController: UIViewController {
             }
         }
         let userAnswer = sender.currentTitle!
-        //print("\(question) AND \(correctAnswer) AND \(userAnswer)")
         answerBank.append(Answer(question: question, correctAnswer: correctAnswer, userAnswer: userAnswer))
         
-        updateQuestion()
-        updateUI()
+
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.updateQuestion()
+            self.updateUI()
             for button in self.arrayOfButtons {
-                button.isEnabled = true
-                button.backgroundColor = .black
+                //button.isEnabled = true
+                //button.backgroundColor = .clear
+                button.setTitleColor(.black, for: .normal)
             }
         }
-        
     }
+    
     
     func updateQuestion() {
         if questionNumber < allQuestions.list.count {
@@ -143,7 +161,6 @@ class QuizViewController: UIViewController {
             selectedAnswer = allQuestions.list[questionNumber].correctAnswer
             questionNumber += 1
         } else {
-            //buttonsView.isHidden = true
             let result = Float (score) / Float(allQuestions.list.count) * 100
             var status = "none"
             switch result {
@@ -171,7 +188,9 @@ class QuizViewController: UIViewController {
         optionD.isHidden = state
         buttonMore.isHidden = !state
         refreshButton.isHidden = !state
+        answersStackView.isHidden = state
     }
+    
     
     func updateUI() {
         questionCounter.text = "\(questionNumber)/\(allQuestions.list.count)"
@@ -186,5 +205,6 @@ class QuizViewController: UIViewController {
         answerBank.removeAll()
         setButtonsHidden(state: false)
     }
-    
+
+
 }

@@ -30,7 +30,7 @@ class MenuTableViewController: UITableViewController {
             //concertViewController.modalTransitionStyle = .crossDissolve
             topViewController.present(concertViewController, animated: true, completion: nil)
         case .test:
-            guard let quizViewController = storyboard?.instantiateViewController(withIdentifier: "QuizViewController") else {return}
+            guard let quizViewController = storyboard?.instantiateViewController(withIdentifier: "NewQuizViewController") else {return}
             if #available(iOS 13, *) { quizViewController.modalPresentationStyle = .fullScreen }
             topViewController.present(quizViewController, animated: true, completion: nil)
         case .game:

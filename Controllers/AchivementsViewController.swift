@@ -24,6 +24,8 @@ class AchivementsViewController: UIViewController {
     @IBOutlet weak var itemsLostLabel: UILabel!
     @IBOutlet weak var trashItemsLabel: UILabel!
     
+    @IBOutlet weak var firstLineImages: UIStackView!
+    
     
     @IBOutlet var achivementButtons: [UIButton]!
     
@@ -50,6 +52,13 @@ class AchivementsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set buttons height
+        if UIScreen.main.bounds.height < 667 {
+            if let height = (firstLineImages.constraints.filter { $0.firstAttribute == .height}).first {
+                height.constant = 80
+            }
+        }
+        
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
         let countKey = defaults.integer(forKey: "countKey")
         concertsCount.text = String(countKey)
