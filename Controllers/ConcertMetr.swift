@@ -4,6 +4,8 @@ import UIKit
 
 class ConcertMetr: UIViewController {
     
+    let transition = SlideInTransition()
+    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -39,49 +41,61 @@ class ConcertMetr: UIViewController {
     }
     let defaults = UserDefaults.standard
     
+    
+    @IBOutlet var labelsStackView: [UILabel]!
+    
+    @IBAction func menuButtonTap(_ sender: UIButton) {
+            guard let menuViewController = storyboard?.instantiateViewController(withIdentifier: "NewMenuViewController") else { return }
+            menuViewController.modalPresentationStyle = .overCurrentContext
+            menuViewController.transitioningDelegate = self
+            present(menuViewController, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var buttonMinus: UIButton!
-    @IBOutlet weak var buttonPlus: UIButton!
-    
-    @IBAction func tapPlus(_ sender: UIButton) {
-        count += 1
-        sender.alpha = 1.0
-    }
-    
-    @IBAction func tapMinus(_ sender: UIButton) {
-        count -= 1
-        sender.alpha = 1.0
-    }
-    
-    
-    @IBAction func tapPlusDown(_ sender: UIButton) {
-        sender.alpha = 0.5
-    }
-    
-    @IBAction func tapMinusDown(_ sender: UIButton) {
-        sender.alpha = 0.5
-    }
     
     @IBAction func tapClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var buttonPlusHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var buttonPlusWidthConstraint: NSLayoutConstraint!
+    
+    @IBAction func buttonPlusTap(_ sender: UIButton) {
+        count += 1
+    }
+    
+    
     @IBOutlet weak var countLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonPlus.layer.cornerRadius = buttonPlus.frame.width / 2
-        buttonMinus.layer.cornerRadius = buttonMinus.frame.width / 2
-        //buttonPlus.contentVerticalAlignment = .center
-        //buttonPlus.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-        
+        // уменьшим высоту стеквью с лейблами для iphone se 1st gen
+        if UIScreen.main.bounds.height < 667 {
+            for label in labelsStackView {
+                label.font = UIFont(name: "CyrillicOldEditedbyme-Bold", size: 30)
+            }
+            buttonPlusWidthConstraint.constant = 70
+            buttonPlusHeightConstraint.constant = 70
+        }
+    
         // get
         count = defaults.integer(forKey: "countKey")
-        //countLabel.text = String(count)
         
-        closeButton.layer.cornerRadius = closeButton.frame.width / 2
     }
 
+}
 
+extension ConcertMetr: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
 }
 

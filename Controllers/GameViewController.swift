@@ -29,20 +29,16 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.delegate = self as TransitionDelegate
   
         //adding background
-        //let background = Sprite(named: "back", x: 0, y: 0, z: 0, size: scene.size)
-        //scene.addChild(background)
-        scene.backgroundColor = .white
+        let background = Sprite(named: "gameBackground", x: 0, y: 0, z: 0, size: scene.size)
+        scene.addChild(background)
         
         // add exit button
-        let exitButton = SKShapeNode()
-        let exitRect = CGRect(x: 0, y: 0, width: 100, height: 100)
-        exitButton.path = UIBezierPath(ovalIn: exitRect).cgPath
-        exitButton.position = CGPoint(x: 550, y: 900)
-        exitButton.fillColor = UIColor.green
-        exitButton.zPosition = 1
+        let exitButton = Sprite(named: "closeButtonMenu", x: 1300, y: 900, z: 1)
         exitButton.name = "exitButton"
-        
         scene.addChild(exitButton)
+        
+        // add rules button
+        
         
         //adding buttons for control
         addingButton(imageName: "button_left_up", name: "controlLeftTop", position: CGPoint(x: 50, y: 250))
@@ -81,7 +77,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         //add scorelabel
         scoreLabel.text = String(score)
         scoreLabel.position = CGPoint(x: 960, y: 930)
-        scoreLabel.fontSize = 60
+        scoreLabel.fontSize = 90
         scoreLabel.fontColor = .systemYellow
         scoreLabel.zPosition = 3
         scoreLabel.fontName = "CyrillicOldEditedbyme-Bold"
