@@ -9,7 +9,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newTapMenu(_ sender: UIButton) {
-        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") else { return }
+        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier: "NewMenuViewController") else { return }
         //if #available(iOS 13, *) { menuViewController.modalPresentationStyle = .fullScreen }
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self

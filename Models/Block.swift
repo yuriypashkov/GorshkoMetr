@@ -13,6 +13,7 @@ class Block: SKShapeNode {
     init(position: CGPoint, rotation: CGFloat) {
         super.init()
         let block = SKShapeNode(rect: CGRect(x: -425, y: -20, width: 850, height: 40))
+        block.strokeColor = .clear
         block.zPosition = 2
         block.fillColor = .clear
         block.position = position

@@ -41,9 +41,9 @@ class GameScene: SKScene {
                                      CGPoint(x: 650, y: 400),
                                      CGPoint(x: 1280, y: 380),
                                      CGPoint(x: 1250, y: 650)]
-    let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "zombie", reward: 1, mass: 5, restitution: 0.1, isGoodItem: true),
-                                          TargetObject(imageName: "skull", reward: 5, mass: 10, restitution: 0.5, isGoodItem: true),
-                                          TargetObject(imageName: "bat", reward: -10, mass: 30, restitution: 0.9, isGoodItem: false)]
+    let arrayOfTargets: [TargetObject] = [TargetObject(imageName: "beer", reward: 1, mass: 5, restitution: 0.1, isGoodItem: true),
+                                          TargetObject(imageName: "bag", reward: 5, mass: 10, restitution: 0.5, isGoodItem: true),
+                                          TargetObject(imageName: "syringe", reward: -10, mass: 30, restitution: 0.9, isGoodItem: false)]
     
     var gorshok: Sprite!
     
@@ -59,7 +59,8 @@ class GameScene: SKScene {
         //adding a test square
         testSquare = SKShapeNode(rect: CGRect(x: -25, y: -25, width: 50, height: 50))
         testSquare.zPosition = 2
-        testSquare.fillColor = .systemBlue
+        testSquare.fillColor = .clear
+        testSquare.strokeColor = .clear
         testSquare.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         testSquare.physicsBody?.isDynamic = false
         testSquare.physicsBody?.categoryBitMask = CollisionCategory.square
