@@ -25,41 +25,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="UNA-KE-eXw" userLabel="LabelStackView">
-                                <rect key="frame" x="30" y="90" width="260" height="132"/>
+                                <rect key="frame" x="30" y="90" width="260" height="147"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Я посмотрел" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ne8-k3-AsE">
-                                        <rect key="frame" x="21.5" y="0.0" width="217.5" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Концертов КиШа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ne8-k3-AsE">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="47"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 концертов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-ba-bax">
-                                        <rect key="frame" x="26" y="45" width="208" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="всего просмотрено:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="yLL-yC-JQ3">
+                                        <rect key="frame" x="0.0" y="50" width="260" height="47"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Короля и Шута" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="yLL-yC-JQ3">
-                                        <rect key="frame" x="1.5" y="90" width="257.5" height="42"/>
-                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-ba-bax">
+                                        <rect key="frame" x="119" y="100" width="22.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-ju-bUH">
-                                <rect key="frame" x="15" y="15" width="80" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="6sr-lT-OpU"/>
-                                    <constraint firstAttribute="height" constant="50" id="Ib6-sP-3np"/>
-                                </constraints>
-                                <state key="normal" title="MenuButton" image="arrowButton"/>
-                                <connections>
-                                    <action selector="menuButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8E-ff-OjC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gia-ro-94d">
-                                <rect key="frame" x="165" y="15" width="135" height="50"/>
+                                <rect key="frame" x="92.5" y="15" width="135" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="glO-ij-ask"/>
                                     <constraint firstAttribute="width" constant="135" id="ocZ-1f-ecv"/>
@@ -85,13 +74,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gia-ro-94d" secondAttribute="trailing" constant="20" id="252-Gz-eGO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="glS-hL-33C" secondAttribute="bottom" constant="10" id="2Rc-JX-IqV"/>
                             <constraint firstItem="UNA-KE-eXw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="2uP-fr-awa"/>
                             <constraint firstItem="glS-hL-33C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4rc-19-BKw"/>
+                            <constraint firstItem="gia-ro-94d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Agq-SI-z3k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IX6-QB-CbV" secondAttribute="trailing" id="Fcx-X1-lMQ"/>
-                            <constraint firstItem="eDP-ju-bUH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="OOj-nA-LnH"/>
-                            <constraint firstItem="eDP-ju-bUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="R8R-ct-UwZ"/>
                             <constraint firstItem="IX6-QB-CbV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rwg-Dn-iUN"/>
                             <constraint firstItem="IX6-QB-CbV" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Z2h-vW-EmL"/>
                             <constraint firstItem="IX6-QB-CbV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bNe-bf-ujV"/>
@@ -105,7 +92,7 @@
                         <outlet property="buttonPlusHeightConstraint" destination="Xf0-Mq-BIq" id="24j-Aq-lJH"/>
                         <outlet property="buttonPlusWidthConstraint" destination="oRo-CA-1SP" id="U2X-f7-ez5"/>
                         <outlet property="closeButton" destination="gia-ro-94d" id="K45-Er-M7c"/>
-                        <outlet property="countLabel" destination="aYN-ba-bax" id="f4o-E9-C5S"/>
+                        <outlet property="countLabel" destination="aYN-ba-bax" id="afn-lR-PHy"/>
                         <outletCollection property="labelsStackView" destination="ne8-k3-AsE" collectionClass="NSMutableArray" id="ygX-9i-PfK"/>
                         <outletCollection property="labelsStackView" destination="aYN-ba-bax" collectionClass="NSMutableArray" id="jBX-yI-GAY"/>
                         <outletCollection property="labelsStackView" destination="yLL-yC-JQ3" collectionClass="NSMutableArray" id="Dko-bW-kMP"/>
@@ -114,6 +101,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2071.0144927536235" y="107.8125"/>
+        </scene>
+        <!--Concert Choice View Controller-->
+        <scene sceneID="w6Y-Ty-HLM">
+            <objects>
+                <viewController storyboardIdentifier="ConcertChoiceViewController" id="kpn-mh-sL8" customClass="ConcertChoiceViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gi9-5g-eTB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backConcertChoice" translatesAutoresizingMaskIntoConstraints="NO" id="gvV-vc-k8s">
+                                <rect key="frame" x="10" y="15" width="300" height="553"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n3g-I4-Agd">
+                                <rect key="frame" x="29" y="70" width="262" height="498"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConcertChoiceCell" rowHeight="70" id="2a2-gc-Qyj" customClass="ConcertChoiceCell" customModule="GorshkoMetr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="262" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2a2-gc-Qyj" id="Xxj-9N-RaT">
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-170" translatesAutoresizingMaskIntoConstraints="NO" id="XNu-33-uM4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="70"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-hm-R9W">
+                                                            <rect key="frame" x="0.0" y="0.0" width="212.5" height="70"/>
+                                                            <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="25"/>
+                                                            <state key="normal" backgroundImage="quizBoardFour">
+                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="buttonTap:" destination="2a2-gc-Qyj" eventType="touchUpInside" id="dcs-de-MoE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-Dl-yZc">
+                                                            <rect key="frame" x="42.5" y="19" width="212.5" height="32"/>
+                                                            <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="35"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="TC8-OO-Uvk"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="XNu-33-uM4" secondAttribute="bottom" id="M6F-Wk-DWe"/>
+                                                <constraint firstItem="XNu-33-uM4" firstAttribute="leading" secondItem="Xxj-9N-RaT" secondAttribute="leading" id="dK2-2P-o6i"/>
+                                                <constraint firstItem="XNu-33-uM4" firstAttribute="top" secondItem="Xxj-9N-RaT" secondAttribute="top" id="qJe-28-LIr"/>
+                                                <constraint firstAttribute="trailing" secondItem="XNu-33-uM4" secondAttribute="trailing" constant="7" id="zSl-MY-gUS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="concertButton" destination="zmj-hm-R9W" id="NM6-LM-d93"/>
+                                            <outlet property="concertCountLabel" destination="oXF-Dl-yZc" id="GVW-ij-eMk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="kpn-mh-sL8" id="Hif-Y3-1xe"/>
+                                    <outlet property="delegate" destination="kpn-mh-sL8" id="xVs-0g-4yK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="n3g-I4-Agd" firstAttribute="top" secondItem="v3C-Zb-KC2" secondAttribute="top" constant="70" id="0V5-8H-dbQ"/>
+                            <constraint firstItem="v3C-Zb-KC2" firstAttribute="trailing" secondItem="n3g-I4-Agd" secondAttribute="trailing" constant="29" id="3J6-rh-97b"/>
+                            <constraint firstAttribute="bottom" secondItem="gvV-vc-k8s" secondAttribute="bottom" id="8v7-TD-SoV"/>
+                            <constraint firstItem="gvV-vc-k8s" firstAttribute="leading" secondItem="v3C-Zb-KC2" secondAttribute="leading" constant="10" id="BGV-Hz-9Oc"/>
+                            <constraint firstItem="v3C-Zb-KC2" firstAttribute="trailing" secondItem="gvV-vc-k8s" secondAttribute="trailing" constant="10" id="BHP-HY-XQD"/>
+                            <constraint firstItem="n3g-I4-Agd" firstAttribute="leading" secondItem="v3C-Zb-KC2" secondAttribute="leading" constant="29" id="Sl2-Ma-MRb"/>
+                            <constraint firstItem="n3g-I4-Agd" firstAttribute="bottom" secondItem="v3C-Zb-KC2" secondAttribute="bottom" id="hx1-Gg-ORs"/>
+                            <constraint firstItem="gvV-vc-k8s" firstAttribute="top" secondItem="v3C-Zb-KC2" secondAttribute="top" constant="15" id="qqc-O8-lvI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v3C-Zb-KC2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="he5-sU-OLB"/>
+                    <connections>
+                        <outlet property="backImage" destination="gvV-vc-k8s" id="4xj-Dt-djP"/>
+                        <outlet property="tableView" destination="n3g-I4-Agd" id="cBw-C1-LC7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a7e-C3-hIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2068.125" y="1014.0845070422536"/>
         </scene>
         <!--Achivements View Controller-->
         <scene sceneID="P8J-6C-xXH">
@@ -512,7 +587,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="gWX-vG-XrR" userLabel="ButtonOneAndTwo">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-67-XWX">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-67-XWX">
                                                 <rect key="frame" x="0.0" y="0.0" width="126.5" height="75"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
@@ -523,7 +598,7 @@
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="LdR-QX-hrT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-RL-cC7">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-RL-cC7">
                                                 <rect key="frame" x="173.5" y="0.0" width="126.5" height="75"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
@@ -539,7 +614,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="5ZA-AF-on7" userLabel="ButtonThreeAndFour">
                                         <rect key="frame" x="0.0" y="125" width="300" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-YW-dS5">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-YW-dS5">
                                                 <rect key="frame" x="0.0" y="0.0" width="134" height="75"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
@@ -550,7 +625,7 @@
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="nzR-Nk-m5z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-1r-9NE">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-1r-9NE">
                                                 <rect key="frame" x="166" y="0.0" width="134" height="75"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
@@ -729,7 +804,7 @@
             </objects>
             <point key="canvasLocation" x="2134.7826086956525" y="-800.22321428571422"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="RL3-UB-u85">
             <objects>
                 <viewController id="OpA-wY-rAa" customClass="HomeViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
@@ -763,11 +838,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x0W-lK-JYE"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="UQF-4b-TW6">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="cFv-ax-6eV">
-                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </barButtonItem>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylZ-Ex-hzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -936,12 +1006,12 @@
     <resources>
         <image name="arrowButton" width="157" height="114"/>
         <image name="back" width="1080" height="1920"/>
+        <image name="backConcertChoice" width="968" height="1788"/>
         <image name="backConcertMetr" width="1080" height="1920"/>
         <image name="bat" width="400" height="400"/>
         <image name="buttonPlus" width="228" height="237"/>
         <image name="closeButtonMenu" width="300" height="118"/>
         <image name="mainBackground" width="1080" height="1920"/>
-        <image name="menu" width="100" height="100"/>
         <image name="menuArt" width="1031" height="1603"/>
         <image name="quizBackground" width="1025" height="1045"/>
         <image name="quizBoardFour" width="456" height="245"/>

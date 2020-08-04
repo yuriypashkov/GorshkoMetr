@@ -91,7 +91,8 @@ class NewQuizViewController: UIViewController {
         
         //autoshrink on buttons
         for button in arrayOfButtons {
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            //button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.titleLabel?.textAlignment = .center
         }
         
     }
