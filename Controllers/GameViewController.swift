@@ -99,16 +99,9 @@ class GameViewController: UIViewController, TransitionDelegate {
     }
     
     func addingButton(imageName: String, name: String, position: CGPoint) {
-//        let button = SKShapeNode(circleOfRadius: 80)
-//        button.position = position
-//        button.fillColor = .yellow
-//        button.zPosition = 3
-//        button.name = name
-//        scene.addChild(button)
         let button = Sprite(named: imageName, x: position.x, y: position.y, z: 3)
         button.name = name
         scene.addChild(button)
-        
     }
     
 }

@@ -1,10 +1,4 @@
-//
-//  Block.swift
-//  GorshkoMetr
-//
-//  Created by Yuriy Pashkov on 6/25/20.
-//  Copyright © 2020 Yuriy Pashkov. All rights reserved.
-//
+
 
 import SpriteKit
 
