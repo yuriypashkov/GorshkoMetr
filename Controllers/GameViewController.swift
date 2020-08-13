@@ -38,7 +38,9 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.addChild(exitButton)
         
         // add rules button
-        
+        let rulesButton = Sprite(named: "beer", x: 600, y: 900, z: 1)
+        rulesButton.name = "rulesButton"
+        scene.addChild(rulesButton)
         
         //adding buttons for control
         addingButton(imageName: "button_left_up", name: "controlLeftTop", position: CGPoint(x: 50, y: 250))
@@ -99,16 +101,9 @@ class GameViewController: UIViewController, TransitionDelegate {
     }
     
     func addingButton(imageName: String, name: String, position: CGPoint) {
-//        let button = SKShapeNode(circleOfRadius: 80)
-//        button.position = position
-//        button.fillColor = .yellow
-//        button.zPosition = 3
-//        button.name = name
-//        scene.addChild(button)
         let button = Sprite(named: imageName, x: position.x, y: position.y, z: 3)
         button.name = name
         scene.addChild(button)
-        
     }
     
 }
