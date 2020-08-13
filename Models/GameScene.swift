@@ -51,7 +51,7 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         physicsWorld.contactDelegate = self
         
-        //adding a test square
+        //adding a square for collision
         testSquare = SKShapeNode(rect: CGRect(x: -25, y: -25, width: 50, height: 50))
         testSquare.zPosition = 2
         testSquare.fillColor = .clear
@@ -74,10 +74,12 @@ class GameScene: SKScene {
         gorshok = Sprite(named: "g_down_left", x: 960, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addChild(gorshok)
+
     }
     
     
     var currentPosition: CGPoint!
+    var rulesView: RulesView!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
@@ -102,6 +104,14 @@ class GameScene: SKScene {
             case "controlRightBottom":
                 testSquare.position = arrayOfSquares[2]
                 gorshokUpdate(imageName: "g_down_right")
+            case "rulesButton":
+                scene?.isPaused = true
+                rulesView = RulesView(size: CGSize(width: 1920, height: 1080))
+                rulesView.addTo(parent: scene!)
+            case "gameCloseRules":
+                scene?.isPaused = false
+                rulesView.removeThis()
+                
             default:
                 return
             }
