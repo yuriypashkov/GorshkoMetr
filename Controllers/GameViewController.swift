@@ -23,7 +23,7 @@ class GameViewController: UIViewController, TransitionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scene = GameScene(size: CGSize(width: 1920, height: 1080))
-       // scene = GameScene(size: view.frame.size)
+        //scene = GameScene(size: CGSize(width: 2436, height: 1125))
         scene.scaleMode = .aspectFit // пока так фиксим проблему разных соотношений сторон на разных мобилах
         scene.anchorPoint = CGPoint(x: 0, y: 0)
         scene.delegate = self as TransitionDelegate
@@ -33,12 +33,12 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.addChild(background)
         
         // add exit button
-        let exitButton = Sprite(named: "closeButtonMenu", x: 1300, y: 900, z: 1)
+        let exitButton = Sprite(named: "closeNew", x: 1300, y: 900, z: 1)
         exitButton.name = "exitButton"
         scene.addChild(exitButton)
         
         // add rules button
-        let rulesButton = Sprite(named: "beer", x: 600, y: 900, z: 1)
+        let rulesButton = Sprite(named: "infoTwo", x: 600, y: 900, z: 1)
         rulesButton.name = "rulesButton"
         scene.addChild(rulesButton)
         

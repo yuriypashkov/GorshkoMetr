@@ -28,9 +28,17 @@ class GameScene: SKScene {
         }
         
     }
+    var bayanCount: Int = 0 {
+        didSet {
+            defaults.set(bayanCount, forKey: "bayanCount")
+        }
+    }
+    var timeInGame: Int = 0 {
+        didSet {
+            defaults.set(timeInGame, forKey: "timeInGame")
+        }
+    }
 
-    //var target: TargetObject!
-    
     var testSquare: SKShapeNode!
     
     let arrayOfRespawn: [CGPoint] = [CGPoint(x: 180, y: 900),
@@ -44,6 +52,7 @@ class GameScene: SKScene {
                                      CGPoint(x: 1250, y: 650)]
     
     var gorshok: Sprite!
+    var startTime = 0
     
      override func didMove(to view: SKView) {
 
@@ -70,6 +79,13 @@ class GameScene: SKScene {
         //get trashItems
         trashItems = defaults.integer(forKey: "trashItems")
         
+        //get bayanCount
+        bayanCount = defaults.integer(forKey: "bayanCount")
+        
+        //get timeInGame
+        timeInGame = defaults.integer(forKey: "timeInGame")
+        startTime = Int(Date().timeIntervalSince1970)
+        //print("\(timeInGame) seconds")
         //add gorshok
         gorshok = Sprite(named: "g_down_left", x: 960, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -88,6 +104,7 @@ class GameScene: SKScene {
         if let name = touched.name {
             switch name {
             case "exitButton":
+                timeInGame += Int(Date().timeIntervalSince1970) - startTime
                 removeAllActions()
                 removeAllChildren()
                 guard let delegate = self.delegate else { return }
@@ -138,7 +155,7 @@ class GameScene: SKScene {
     }
     
     func spawnTargets() {
-        if Int(arc4random()) % 1000 < 10 { // рандом-генератор частоты появления артов
+        if Int(arc4random()) % 1000 < 15 { // рандом-генератор частоты появления артов
             var target: TargetObject
             let randTargetType = typeOfTargets.allCases.randomElement()
             switch randTargetType {
@@ -147,7 +164,7 @@ class GameScene: SKScene {
             case .bag:
                 target = TargetObject(imageName: "bag", reward: 5, mass: 10, restitution: 0.5, isGoodItem: true)
             case .syringe:
-                target = TargetObject(imageName: "syringe", reward: -100, mass: 10, restitution: 0.9, isGoodItem: false)
+                target = TargetObject(imageName: "syringe", reward: -100, mass: 10, restitution: 0.9, isGoodItem: false, isBayan: true)
             case .fuck:
                 target = TargetObject(imageName: "fuck", reward: -10, mass: 15, restitution: 0.5, isGoodItem: false)
             case .head:
@@ -207,9 +224,9 @@ extension GameScene: SKPhysicsContactDelegate {
             guard let delegate = self.delegate else { return }
             (delegate as! TransitionDelegate).score += target.reward
             // проверим, не поймали ли нехороший предмет
-            if !target.isGoodItem {
-                    trashItems += 1
-            }
+            if !target.isGoodItem { trashItems += 1 }
+            // проверим не поймали ли баян
+            if target.isBayan { bayanCount += 1 }
             // удаляем объект с игровой сцены
             target.removeFromParent()
 

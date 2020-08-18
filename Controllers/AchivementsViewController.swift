@@ -30,16 +30,12 @@ class AchivementsViewController: UIViewController {
     @IBOutlet var achivementButtons: [UIButton]!
     
     @IBAction func achivmentButtonClick(_ sender: UIButton) {
-        let achivement = achivementsArray[sender.tag]
+        let achivement = achivementBank.achivementsArray[sender.tag]
         setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message)
         animateIn()
     }
     
-    var achivementsArray: [Achivement] = [
-        Achivement(imageName: "bat", title: "КонцертМастер", message: "Ты невероятно хорош, ибо посмотрел концерты КиШа 10 или более раз", isAchived: false),
-        Achivement(imageName: "skull", title: "Черепность", message: "Я нахер что сюда писать, придумаем потом", isAchived: false),
-        Achivement(imageName: "zombie", title: "Зомбийность", message: "Да, потом придумаем", isAchived: false)
-    ]
+    var achivementBank = AchivementBank()
 
     
     private var alertView: CustomAlert!
@@ -53,43 +49,29 @@ class AchivementsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //set buttons height
-        if UIScreen.main.bounds.height < 667 {
-            if let height = (firstLineImages.constraints.filter { $0.firstAttribute == .height}).first {
-                height.constant = 80
-            }
-        }
+//        if UIScreen.main.bounds.height < 667 {
+//            if let height = (firstLineImages.constraints.filter { $0.firstAttribute == .height}).first {
+//                height.constant = 80
+//            }
+//        }
         
         closeButton.layer.cornerRadius = closeButton.frame.width / 2
-        let countKey = defaults.integer(forKey: "countKey")
-        concertsCount.text = String(countKey)
-        let scoreKey = defaults.integer(forKey: "scoreKey")
-        scoreCount.text = String(scoreKey)
-        let correctAnswers = defaults.integer(forKey: "correctAnswers")
-        correctAnswersLabel.text = String(correctAnswers)
-        let quizPassed = defaults.integer(forKey: "quizPassed")
-        quizPassedLabel.text = String(quizPassed)
-        if defaults.integer(forKey: "answersCount") != 0 {
-            let answersCount = defaults.double(forKey: "answersCount")
-            let percent: Double = (Double(correctAnswers) / answersCount) * 100
-            answersCountLabel.text = String(format: "%.0f", percent)
-        }
-        launchCountLabel.text = defaults.string(forKey: "launchCount")
-        let itemsLost = defaults.integer(forKey: "itemsLost")
-        itemsLostLabel.text = String(itemsLost)
-        let trashItems = defaults.integer(forKey: "trashItems")
-        trashItemsLabel.text = String(trashItems)
+
+        concertsCount.text = String(achivementBank.countKey)
+        scoreCount.text = String(achivementBank.scoreKey)
+        correctAnswersLabel.text = String(achivementBank.correctAnswers)
+        quizPassedLabel.text = String(achivementBank.quizPassed)
+        answersCountLabel.text = String(format: "%.0f", achivementBank.percent)
+        launchCountLabel.text = String(achivementBank.launchCount)
+        itemsLostLabel.text = String(achivementBank.itemsLost)
+        trashItemsLabel.text = String(achivementBank.trashItems)
         
         //setup blur
         setupVisualEffectView()
-        
-        //setup achivements
-        if countKey >= 10 {
-            achivementsArray[0].isAchived = true
-        }
-        
+    
         //setup achived buttons
         for button in achivementButtons {
-            let achivement = achivementsArray[button.tag]
+            let achivement = achivementBank.achivementsArray[button.tag]
             if achivement.isAchived {
                 button.isEnabled = true
             }
