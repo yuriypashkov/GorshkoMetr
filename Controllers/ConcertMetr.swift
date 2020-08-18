@@ -85,8 +85,8 @@ class ConcertMetr: UIViewController, ConcertCountDelegate {
             for label in labelsStackView {
                 label.font = UIFont(name: "CyrillicOldEditedbyme-Bold", size: 30)
             }
-            buttonPlusWidthConstraint.constant = 70
-            buttonPlusHeightConstraint.constant = 70
+            //buttonPlusWidthConstraint.constant = 70
+            //buttonPlusHeightConstraint.constant = 70
         }
     
         // get

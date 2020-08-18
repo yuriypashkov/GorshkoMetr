@@ -5,7 +5,6 @@ class ConcertChoiceViewController: UIViewController, CellProtocolDelegate {
     
     func dismissController() {
         dismiss(animated: true, completion: nil)
-        // count += 1
     }
     
     var concerts = ConcertChoiceModel()
@@ -13,9 +12,20 @@ class ConcertChoiceViewController: UIViewController, CellProtocolDelegate {
     @IBOutlet weak var backImage: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var tableViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var tableViewTop: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+                if UIScreen.main.bounds.height < 667 {
+                    tableViewTrailing.constant = 50
+                    tableViewLeading.constant = 40
+                    tableViewTop.constant = 105
+                } else if UIScreen.main.bounds.height < 895 {
+                    tableViewTop.constant = 130
+        }
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.imageSwipe(_:)))
         swipeGestureRecognizer.direction = .down
