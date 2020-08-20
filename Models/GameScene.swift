@@ -41,15 +41,15 @@ class GameScene: SKScene {
 
     var testSquare: SKShapeNode!
     
-    let arrayOfRespawn: [CGPoint] = [CGPoint(x: 180, y: 900),
-                                     CGPoint(x: 180, y: 700),
-                                     CGPoint(x: 1700, y: 700),
-                                     CGPoint(x: 1700, y: 900),]
+    let arrayOfRespawn: [CGPoint] = [CGPoint(x: 230, y: 990),
+                                     CGPoint(x: 200, y: 700),
+                                     CGPoint(x: 1950, y: 650),
+                                     CGPoint(x: 1950, y: 980),]
     
-    let arrayOfSquares: [CGPoint] = [CGPoint(x: 650, y: 650),
-                                     CGPoint(x: 650, y: 400),
-                                     CGPoint(x: 1280, y: 380),
-                                     CGPoint(x: 1250, y: 650)]
+    let arrayOfSquares: [CGPoint] = [CGPoint(x: 940, y: 650),
+                                     CGPoint(x: 940, y: 370),
+                                     CGPoint(x: 1500, y: 380),
+                                     CGPoint(x: 1470, y: 650)]
     
     var gorshok: Sprite!
     var startTime = 0
@@ -85,9 +85,8 @@ class GameScene: SKScene {
         //get timeInGame
         timeInGame = defaults.integer(forKey: "timeInGame")
         startTime = Int(Date().timeIntervalSince1970)
-        //print("\(timeInGame) seconds")
         //add gorshok
-        gorshok = Sprite(named: "g_down_left", x: 960, y: 440, z: 3)
+        gorshok = Sprite(named: "g_down_left", x: 1218, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addChild(gorshok)
 
@@ -123,7 +122,7 @@ class GameScene: SKScene {
                 gorshokUpdate(imageName: "g_down_right")
             case "rulesButton":
                 scene?.isPaused = true
-                rulesView = RulesView(size: CGSize(width: 1920, height: 1080))
+                rulesView = RulesView(size: CGSize(width: 2436, height: 1125))
                 rulesView.addTo(parent: scene!)
             case "gameCloseRules":
                 scene?.isPaused = false
@@ -137,7 +136,7 @@ class GameScene: SKScene {
     
     func gorshokUpdate(imageName: String) {
         gorshok.removeFromParent()
-        gorshok = Sprite(named: imageName, x: 960, y: 440, z: 3)
+        gorshok = Sprite(named: imageName, x: 1218, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         addChild(gorshok)
     }

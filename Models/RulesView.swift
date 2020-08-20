@@ -13,7 +13,7 @@ class RulesView {
         node.position = CGPoint(x: 0, y: 0)
         // спрайт с окошком
         let testSprite = Sprite(named: "rulesWindow", x: size.width / 2, y: size.height / 2, z: 5)
-        testSprite.setScale(1.2)
+        testSprite.setScale(1.6)
         testSprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         node.addChild(testSprite)
         // бекграунд
