@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach24_what.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -101,22 +101,31 @@ class NewQuizViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    let arrayOfImagesName = ["quizBoardOne", "quizBoardTwo", "quizBoardThree", "quizBoardFour"]
+    
+    func setButtonImage(tag: Int, imageState: String, sender: UIButton) {
+        switch tag {
+        case 1:
+            sender.setBackgroundImage(UIImage(named: "buttonOne\(imageState)"), for: .normal)
+        case 2:
+            sender.setBackgroundImage(UIImage(named: "buttonTwo\(imageState)"), for: .normal)
+        case 3:
+            sender.setBackgroundImage(UIImage(named: "buttonThree\(imageState)"), for: .normal)
+        default:
+            sender.setBackgroundImage(UIImage(named: "buttonFour\(imageState)"), for: .normal)
+        }
+    }
+    
     @IBAction func answerPressed(_ sender: UIButton) {
         answersCount += 1
         
         if sender.tag == selectedAnswer {
             score += 1
             correctAnswers += 1
-            //sender.backgroundColor = .systemGreen
-            sender.setTitleColor(.systemGreen, for: .normal)
+            setButtonImage(tag: sender.tag, imageState: "True", sender: sender)
         } else {
-            //sender.backgroundColor = .systemRed
-            sender.setTitleColor(.systemRed, for: .normal)
+            setButtonImage(tag: sender.tag, imageState: "False", sender: sender)
         }
-        
-//        for button in arrayOfButtons {
-//            button.isEnabled = false
-//        }
         
         //добавляем данные в массив ответов
         let tempNumber = questionNumber - 1
@@ -143,10 +152,8 @@ class NewQuizViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.updateQuestion()
             self.updateUI()
-            for button in self.arrayOfButtons {
-                //button.isEnabled = true
-                //button.backgroundColor = .clear
-                button.setTitleColor(.black, for: .normal)
+            for i in 0..<self.arrayOfButtons.count {
+                self.arrayOfButtons[i].setBackgroundImage(UIImage(named: self.arrayOfImagesName[i]), for: .normal)
             }
         }
     }

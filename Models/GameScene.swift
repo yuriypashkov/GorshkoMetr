@@ -1,6 +1,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 protocol TransitionDelegate: SKSceneDelegate {
     func dismissVC()
@@ -41,21 +42,33 @@ class GameScene: SKScene {
 
     var testSquare: SKShapeNode!
     
-    let arrayOfRespawn: [CGPoint] = [CGPoint(x: 180, y: 900),
-                                     CGPoint(x: 180, y: 700),
-                                     CGPoint(x: 1700, y: 700),
-                                     CGPoint(x: 1700, y: 900),]
+    let arrayOfRespawn: [CGPoint] = [CGPoint(x: 230, y: 990),
+                                     CGPoint(x: 200, y: 700),
+                                     CGPoint(x: 1950, y: 650),
+                                     CGPoint(x: 1950, y: 980),]
     
-    let arrayOfSquares: [CGPoint] = [CGPoint(x: 650, y: 650),
-                                     CGPoint(x: 650, y: 400),
-                                     CGPoint(x: 1280, y: 380),
-                                     CGPoint(x: 1250, y: 650)]
+    let arrayOfSquares: [CGPoint] = [CGPoint(x: 940, y: 650),
+                                     CGPoint(x: 940, y: 370),
+                                     CGPoint(x: 1500, y: 380),
+                                     CGPoint(x: 1470, y: 650)]
     
     var gorshok: Sprite!
     var startTime = 0
     
+    var backgroundMusic: AVAudioPlayer!
+    var isChekboxChecked = true
+    
      override func didMove(to view: SKView) {
-
+        //play music
+        let mainMusicThemePath = Bundle.main.path(forResource: "lesnik_game_2", ofType: "mp3")
+        do {
+            backgroundMusic = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: mainMusicThemePath!))
+            backgroundMusic.numberOfLoops = -1
+            backgroundMusic.play()
+        } catch  {
+            print(error)
+        }
+        
         // adding physical
         physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         physicsWorld.contactDelegate = self
@@ -85,9 +98,21 @@ class GameScene: SKScene {
         //get timeInGame
         timeInGame = defaults.integer(forKey: "timeInGame")
         startTime = Int(Date().timeIntervalSince1970)
-        //print("\(timeInGame) seconds")
+        
+        //get checkbox state ГАЛКУ СДЕЛАТЬ БОЛЬШЕ
+        isChekboxChecked = defaults.bool(forKey: "isCheckboxChecked")
+        
+        //первый запуск приложения, галочка стоит по-умолчанию
+        if defaults.integer(forKey: "launchCount") <= 1 { isChekboxChecked = true }
+        
+        if isChekboxChecked {
+            scene?.isPaused = true
+            rulesView = RulesView(size: CGSize(width: 2436, height: 1125))
+            rulesView.addTo(parent: scene!)
+        }
+        
         //add gorshok
-        gorshok = Sprite(named: "g_down_left", x: 960, y: 440, z: 3)
+        gorshok = Sprite(named: "g_down_left", x: 1218, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addChild(gorshok)
 
@@ -123,12 +148,19 @@ class GameScene: SKScene {
                 gorshokUpdate(imageName: "g_down_right")
             case "rulesButton":
                 scene?.isPaused = true
-                rulesView = RulesView(size: CGSize(width: 1920, height: 1080))
+                rulesView = RulesView(size: CGSize(width: 2436, height: 1125))
+                
+                if isChekboxChecked { rulesView.checkbox.alpha = 1.0 }
+                else { rulesView.checkbox.alpha = 0.0 }
+                
                 rulesView.addTo(parent: scene!)
             case "gameCloseRules":
                 scene?.isPaused = false
                 rulesView.removeThis()
-                
+            case "gameCheckbox":
+                isChekboxChecked = !isChekboxChecked
+                if isChekboxChecked { rulesView.checkbox.alpha = 1.0 } else { rulesView.checkbox.alpha = 0.0 }
+                defaults.set(isChekboxChecked, forKey: "isCheckboxChecked")
             default:
                 return
             }
@@ -137,8 +169,9 @@ class GameScene: SKScene {
     
     func gorshokUpdate(imageName: String) {
         gorshok.removeFromParent()
-        gorshok = Sprite(named: imageName, x: 960, y: 440, z: 3)
+        gorshok = Sprite(named: imageName, x: 1218, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //gorshok.animateGorshok(x: 10, y: 10, duration: 0.9)
         addChild(gorshok)
     }
     
@@ -152,6 +185,16 @@ class GameScene: SKScene {
         case meat
         case mushroom
         case wolf
+        // new
+        case book
+        case boots
+        case donkey
+        case melon
+        case puppet
+        case rum
+        case skull
+        case stone
+        case tooth
     }
     
     func spawnTargets() {
@@ -177,6 +220,24 @@ class GameScene: SKScene {
                 target = TargetObject(imageName: "mushroom", reward: -20, mass: 15, restitution: 0.8, isGoodItem: false)
             case .wolf:
                 target = TargetObject(imageName: "wolf", reward: 10, mass: 13, restitution: 0.4, isGoodItem: true)
+            case .book:
+                target = TargetObject(imageName: "book", reward: 30, mass: 5, restitution: 0.5, isGoodItem: true)
+            case .boots:
+                target = TargetObject(imageName: "boots", reward: 20, mass: 10, restitution: 0.3, isGoodItem: true)
+            case .donkey:
+                target = TargetObject(imageName: "donkey", reward: -15, mass: 15, restitution: 0.8, isGoodItem: false)
+            case .melon:
+                target = TargetObject(imageName: "melon", reward: -20, mass: 5, restitution: 0.4, isGoodItem: false)
+            case .puppet:
+                target = TargetObject(imageName: "puppet", reward: -30, mass: 6, restitution: 0.6, isGoodItem: false)
+            case .rum:
+                target = TargetObject(imageName: "rum", reward: 30, mass: 5, restitution: 0.7, isGoodItem: true)
+            case .skull:
+                target = TargetObject(imageName: "skull", reward: 10, mass: 3, restitution: 0.3, isGoodItem: true)
+            case .stone:
+                target = TargetObject(imageName: "stone", reward: -40, mass: 10, restitution: 0.5, isGoodItem: false)
+            case .tooth:
+                target = TargetObject(imageName: "tooth", reward: 10, mass: 4, restitution: 0.4, isGoodItem: true)
             case .none:
                 return
             }
@@ -211,6 +272,16 @@ class GameScene: SKScene {
         enumerateTargets()
     }
     
+    func animateAction(imageName: String, sprite: Sprite) {
+        let textureArray = [SKTexture(imageNamed: "\(imageName)_1"), SKTexture(imageNamed: "\(imageName)_2"), SKTexture(imageNamed: "\(imageName)_3")]
+        let action = SKAction.animate(with: textureArray, timePerFrame: 0.1, resize: true, restore: false)
+        scene?.addChild(sprite)
+        sprite.run(action)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            sprite.removeFromParent()
+        }
+    }
+    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -218,18 +289,22 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         switch contactMask {
         case CollisionCategory.target | CollisionCategory.square:
-
             let target = contact.bodyB.node as! TargetObject
             // добавим очков за пойманную цель
             guard let delegate = self.delegate else { return }
             (delegate as! TransitionDelegate).score += target.reward
+            let heaven = Sprite(named: "transparent", x: contact.bodyA.node!.position.x, y: contact.bodyA.node!.position.y, z: 10)
             // проверим, не поймали ли нехороший предмет
-            if !target.isGoodItem { trashItems += 1 }
+            if !target.isGoodItem {
+                trashItems += 1
+                animateAction(imageName: "shit", sprite: heaven)
+            } else {
+                animateAction(imageName: "heaven", sprite: heaven)
+            }
             // проверим не поймали ли баян
             if target.isBayan { bayanCount += 1 }
             // удаляем объект с игровой сцены
             target.removeFromParent()
-
         default:
             return
         }

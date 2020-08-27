@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach19_punk.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

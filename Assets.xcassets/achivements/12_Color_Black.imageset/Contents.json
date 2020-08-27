@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach13_gorshToo.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

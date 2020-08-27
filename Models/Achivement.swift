@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class Achivement {
@@ -8,6 +6,7 @@ class Achivement {
     var title: String
     var message: String
     var isAchived: Bool
+    //var isView = false
     
     
     init(imageName: String, title: String, message: String, isAchived: Bool) {
