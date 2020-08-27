@@ -13,9 +13,12 @@ class QuizResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonClose.layer.cornerRadius = buttonClose.frame.width / 2
+        //buttonClose.layer.cornerRadius = buttonClose.frame.width / 2
         if #available(iOS 13, *) { buttonClose.isHidden = true }
-
+        
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .clear
+        view.isOpaque = false
     }
     
 }
@@ -30,6 +33,7 @@ extension QuizResultsViewController: UITableViewDataSource, UITableViewDelegate 
         let data = answerBank[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell") as! ResultCell
         cell.setData(data: data, number: indexPath.row + 1)
+        cell.backgroundColor = .clear
         return cell
     }
     

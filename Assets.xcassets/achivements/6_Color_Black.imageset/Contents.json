@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach7_Balu.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

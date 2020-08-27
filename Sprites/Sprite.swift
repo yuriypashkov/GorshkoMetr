@@ -21,3 +21,13 @@ class Sprite: SKSpriteNode {
     }
     
 }
+
+extension Sprite {
+    func animateGorshok(x: CGFloat, y: CGFloat, duration: TimeInterval) {
+        let firstAction = SKAction.moveBy(x: -x, y: y, duration: duration)
+        let secondAction = SKAction.moveBy(x: x, y: -y, duration: duration)
+        let actionGroup = SKAction.sequence([firstAction, secondAction])
+        let newSequence = SKAction.repeatForever(actionGroup)
+        self.run(newSequence)
+    }
+}

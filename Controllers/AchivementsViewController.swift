@@ -31,14 +31,18 @@ class AchivementsViewController: UIViewController {
     
     @IBAction func achivmentButtonClick(_ sender: UIButton) {
         let achivement = achivementBank.achivementsArray[sender.tag]
-        setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message)
+        if achivement.isAchived {
+            setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message)
+        } else {
+            setAlert(imageName: achivement.imageName + "_Black", title: achivement.title, message: achivement.message)
+        }
         animateIn()
     }
     
     var achivementBank = AchivementBank()
 
     
-    private var alertView: CustomAlert!
+    private var alertView: AchivementView!
     
     let visualEffectView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
@@ -74,6 +78,8 @@ class AchivementsViewController: UIViewController {
             let achivement = achivementBank.achivementsArray[button.tag]
             if achivement.isAchived {
                 button.isEnabled = true
+                let imageName = String(button.tag) + "_Color"
+                button.setImage(UIImage(named: imageName), for: .normal)
             }
         }
 
@@ -100,7 +106,7 @@ class AchivementsViewController: UIViewController {
     }
     
     func setAlert(imageName: String, title: String, message: String) {
-        alertView = Bundle.main.loadNibNamed("CustomAlert", owner: self, options: nil)?.first as? CustomAlert
+        alertView = Bundle.main.loadNibNamed("AchivementView", owner: self, options: nil)?.first as? AchivementView
         view.addSubview(alertView)
         alertView.center = view.center
         alertView.okButton.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)

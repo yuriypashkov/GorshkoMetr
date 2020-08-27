@@ -12,6 +12,8 @@ class NewMenuViewController: UIViewController {
     @IBOutlet weak var buttonsMenuHeight: NSLayoutConstraint!
     @IBOutlet weak var menuArt: UIImageView!
     
+    @IBOutlet weak var achImage: UIImageView!
+    
     let topViewController = UIApplication.shared.keyWindow?.rootViewController
     
     func openVC(vcName: String) {
@@ -57,6 +59,15 @@ class NewMenuViewController: UIViewController {
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.imageTap(_:)))
         swipeGestureRecognizer.direction = .left
         menuArt.addGestureRecognizer(swipeGestureRecognizer)
+        
+        // для кнопки Хой
+//        let achivementBank = AchivementBank()
+//        for ach in achivementBank.achivementsArray {
+//            if ach.isAchived {
+//                achImage.isHidden = false
+//                break
+//            }
+//        }
         
     }
     

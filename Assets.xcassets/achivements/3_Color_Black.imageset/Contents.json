@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach4_kdemicTrue.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

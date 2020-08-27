@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ach2_klog.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

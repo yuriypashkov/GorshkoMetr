@@ -35,11 +35,13 @@ class GameViewController: UIViewController, TransitionDelegate {
         // add exit button
         let exitButton = Sprite(named: "closeNew", x: scene.size.width / 2 + 200, y: 900, z: 1)
         exitButton.name = "exitButton"
+        exitButton.setScale(0.8)
         scene.addChild(exitButton)
         
         // add rules button
         let rulesButton = Sprite(named: "infoTwo", x: scene.size.width / 2 - 400, y: 900, z: 1)
         rulesButton.name = "rulesButton"
+        rulesButton.setScale(0.8)
         scene.addChild(rulesButton)
         
         //adding buttons for control
