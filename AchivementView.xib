@@ -26,25 +26,26 @@
                             <rect key="frame" x="0.0" y="0.0" width="300" height="530"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-sf-Pyf">
-                            <rect key="frame" x="45" y="190" width="210" height="23"/>
+                            <rect key="frame" x="45" y="190" width="210" height="29.5"/>
                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="myK-xT-krw">
-                            <rect key="frame" x="50" y="238" width="200" height="16.5"/>
+                            <rect key="frame" x="70" y="244.5" width="160" height="21"/>
                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-Mb-T8h">
-                            <rect key="frame" x="70" y="430" width="160" height="50"/>
+                            <rect key="frame" x="200" y="430" width="70" height="70"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Fb2-IY-btn"/>
+                                <constraint firstAttribute="height" constant="70" id="Fb2-IY-btn"/>
+                                <constraint firstAttribute="width" constant="70" id="eLb-SA-4RM"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
-                            <state key="normal" title="ЗАКРЫТЬ" backgroundImage="quizBoardOne">
+                            <state key="normal" backgroundImage="closeNew">
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
                         </button>
@@ -55,22 +56,39 @@
                                 <constraint firstAttribute="width" constant="100" id="vQN-7w-coB"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b3-TD-R3k">
+                            <rect key="frame" x="30" y="430" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="48e-Ck-T5L"/>
+                                <constraint firstAttribute="height" constant="70" id="phW-AM-uAR"/>
+                            </constraints>
+                            <state key="normal" image="share"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="НЕ ДОСТИГНУТО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-If-MFq">
+                            <rect key="frame" x="4" y="244.5" width="292.5" height="41"/>
+                            <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="35"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Gdu-sf-Pyf" secondAttribute="trailing" constant="45" id="0wW-k1-DQT"/>
                         <constraint firstAttribute="bottom" secondItem="drP-5O-L6T" secondAttribute="bottom" id="3oi-1O-DJK"/>
-                        <constraint firstAttribute="trailing" secondItem="2OF-Mb-T8h" secondAttribute="trailing" constant="70" id="7P4-lK-aqO"/>
-                        <constraint firstItem="2OF-Mb-T8h" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" constant="70" id="CGK-oz-rWv"/>
-                        <constraint firstAttribute="bottom" secondItem="2OF-Mb-T8h" secondAttribute="bottom" constant="50" id="EKb-Fp-Zxm"/>
+                        <constraint firstAttribute="trailing" secondItem="2OF-Mb-T8h" secondAttribute="trailing" constant="30" id="7P4-lK-aqO"/>
+                        <constraint firstAttribute="bottom" secondItem="2OF-Mb-T8h" secondAttribute="bottom" constant="30" id="EKb-Fp-Zxm"/>
                         <constraint firstItem="zDu-uD-x3v" firstAttribute="top" secondItem="8gX-ro-rtq" secondAttribute="top" constant="40" id="F6G-9i-Rs7"/>
+                        <constraint firstItem="5b3-TD-R3k" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" constant="30" id="HRk-s0-Tao"/>
                         <constraint firstItem="Gdu-sf-Pyf" firstAttribute="top" secondItem="zDu-uD-x3v" secondAttribute="bottom" constant="20" id="Hid-Fi-gPN"/>
                         <constraint firstItem="drP-5O-L6T" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" id="JTy-Ho-xRD"/>
                         <constraint firstItem="zDu-uD-x3v" firstAttribute="centerX" secondItem="8gX-ro-rtq" secondAttribute="centerX" id="KNk-Ux-Yur"/>
                         <constraint firstItem="myK-xT-krw" firstAttribute="top" secondItem="Gdu-sf-Pyf" secondAttribute="bottom" constant="25" id="aFm-aJ-AQy"/>
                         <constraint firstItem="Gdu-sf-Pyf" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" constant="45" id="bE1-kv-ROy"/>
                         <constraint firstItem="drP-5O-L6T" firstAttribute="top" secondItem="8gX-ro-rtq" secondAttribute="top" id="ctC-YT-HWA"/>
-                        <constraint firstItem="myK-xT-krw" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" constant="50" id="gKe-Nc-F41"/>
-                        <constraint firstAttribute="trailing" secondItem="myK-xT-krw" secondAttribute="trailing" constant="50" id="l4p-Ka-ZbJ"/>
+                        <constraint firstItem="myK-xT-krw" firstAttribute="leading" secondItem="8gX-ro-rtq" secondAttribute="leading" constant="70" id="gKe-Nc-F41"/>
+                        <constraint firstAttribute="bottom" secondItem="5b3-TD-R3k" secondAttribute="bottom" constant="30" id="krE-BR-kho"/>
+                        <constraint firstAttribute="trailing" secondItem="myK-xT-krw" secondAttribute="trailing" constant="70" id="l4p-Ka-ZbJ"/>
+                        <constraint firstItem="3hS-If-MFq" firstAttribute="centerX" secondItem="8gX-ro-rtq" secondAttribute="centerX" id="mTl-kh-CmW"/>
+                        <constraint firstItem="3hS-If-MFq" firstAttribute="centerY" secondItem="8gX-ro-rtq" secondAttribute="centerY" id="q9z-R3-JNB"/>
                         <constraint firstAttribute="trailing" secondItem="drP-5O-L6T" secondAttribute="trailing" id="rNx-O9-Udu"/>
                     </constraints>
                 </view>
@@ -86,7 +104,9 @@
             <connections>
                 <outlet property="image" destination="zDu-uD-x3v" id="1IA-pE-MFI"/>
                 <outlet property="messageLabel" destination="myK-xT-krw" id="kaz-fX-N9M"/>
+                <outlet property="notShareLabel" destination="3hS-If-MFq" id="qDw-1G-Q9o"/>
                 <outlet property="okButton" destination="2OF-Mb-T8h" id="fZ5-wf-Y7C"/>
+                <outlet property="shareButton" destination="5b3-TD-R3k" id="eQT-Ec-ggE"/>
                 <outlet property="titleLabel" destination="Gdu-sf-Pyf" id="tz8-cO-f2O"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
@@ -95,6 +115,7 @@
     <resources>
         <image name="10_Color" width="331" height="472"/>
         <image name="achivementBackgroundTransparent" width="1125" height="2436"/>
-        <image name="quizBoardOne" width="461" height="231"/>
+        <image name="closeNew" width="197" height="195"/>
+        <image name="share" width="198" height="195"/>
     </resources>
 </document>

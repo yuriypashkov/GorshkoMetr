@@ -56,7 +56,19 @@ class GameScene: SKScene {
     var startTime = 0
     
     var backgroundMusic: AVAudioPlayer!
+    var keyClick: AVAudioPlayer!
+    var normalObject: AVAudioPlayer!
+    var wrongObject: AVAudioPlayer!
+    var lightningSound: AVAudioPlayer!
+    
     var isChekboxChecked = true
+    
+    var controlLeftTop: Sprite!
+    var controlLeftBottom: Sprite!
+    var controlRightTop: Sprite!
+    var controlRightBottom: Sprite!
+    
+    var lightningShape: SKShapeNode!
     
      override func didMove(to view: SKView) {
         //play music
@@ -65,6 +77,19 @@ class GameScene: SKScene {
             backgroundMusic = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: mainMusicThemePath!))
             backgroundMusic.numberOfLoops = -1
             backgroundMusic.play()
+        } catch  {
+            print(error)
+        }
+        //prepare sound
+        let keyClickPath = Bundle.main.path(forResource: "keyclick", ofType: "wav")
+        let normalObjPath = Bundle.main.path(forResource: "cratepop", ofType: "wav")
+        let wrongObjPath = Bundle.main.path(forResource: "wrongObj", ofType: "mp3")
+        let lightningSoundPath = Bundle.main.path(forResource: "lightning", ofType: "mp3")
+        do {
+            keyClick = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: keyClickPath!))
+            normalObject = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: normalObjPath!))
+            wrongObject = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: wrongObjPath!))
+            lightningSound = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lightningSoundPath!))
         } catch  {
             print(error)
         }
@@ -115,7 +140,19 @@ class GameScene: SKScene {
         gorshok = Sprite(named: "g_down_left", x: 1218, y: 440, z: 3)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addChild(gorshok)
-
+        
+        //enum buttons
+        self.enumerateChildNodes(withName: "controlLeftTop") { (node, stop) in self.controlLeftTop = node as? Sprite }
+        self.enumerateChildNodes(withName: "controlLeftBottom") { (node, stop) in self.controlLeftBottom = node as? Sprite }
+        self.enumerateChildNodes(withName: "controlRightTop") { (node, stop) in self.controlRightTop = node as? Sprite }
+        self.enumerateChildNodes(withName: "controlRightBottom") { (node, stop) in self.controlRightBottom = node as? Sprite }
+        
+        //lightning
+        lightningShape = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 2436, height: 1125))
+        lightningShape.position = CGPoint(x: 0, y: 0)
+        lightningShape.zPosition = 9
+        lightningShape.fillColor = .white
+        lightningShape.alpha = 0.5
     }
     
     
@@ -137,15 +174,23 @@ class GameScene: SKScene {
             case "controlLeftTop":
                 testSquare.position = arrayOfSquares[0]
                 gorshokUpdate(imageName: "g_up_left")
+                keyClick.play()
+                controlLeftTop.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlLeftBottom":
                 testSquare.position = arrayOfSquares[1]
                 gorshokUpdate(imageName: "g_down_left")
+                keyClick.play()
+                controlLeftBottom.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlRightTop":
                 testSquare.position = arrayOfSquares[3]
                 gorshokUpdate(imageName: "g_up_right")
+                keyClick.play()
+                controlRightTop.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlRightBottom":
                 testSquare.position = arrayOfSquares[2]
                 gorshokUpdate(imageName: "g_down_right")
+                keyClick.play()
+                controlRightBottom.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "rulesButton":
                 scene?.isPaused = true
                 rulesView = RulesView(size: CGSize(width: 2436, height: 1125))
@@ -213,7 +258,7 @@ class GameScene: SKScene {
             case .head:
                 target = TargetObject(imageName: "head", reward: 10, mass: 20, restitution: 0.7, isGoodItem: true)
             case .lightning:
-                target = TargetObject(imageName: "lightning", reward: 20, mass: 15, restitution: 0.3, isGoodItem: true)
+                target = TargetObject(imageName: "lightning", reward: 20, mass: 15, restitution: 0.3, isGoodItem: true, isLightning: true)
             case .meat:
                 target = TargetObject(imageName: "meat", reward: 1, mass: 20, restitution: 0.6, isGoodItem: true)
             case .mushroom:
@@ -282,6 +327,33 @@ class GameScene: SKScene {
         }
     }
     
+    var isLightning = false
+    
+    func thunderAndLightning() {
+        guard !isLightning else { return }
+        self.addChild(lightningShape)
+        var timerValue = 0
+        isLightning = true
+        lightningSound?.play()
+        let wait = SKAction.wait(forDuration: 0.1)
+        let lightOn = SKAction.run ({
+            [unowned self] in
+            if timerValue <= 3 {
+                timerValue += 1
+                self.lightningShape.alpha = 0.5
+            } else {
+                self.removeAction(forKey: "lightningCountdown")
+                self.lightningShape.removeFromParent()
+                self.isLightning = false
+            }
+        })
+        let lightOff = SKAction.run {
+            self.lightningShape.alpha = 0.0
+        }
+        let sequence = SKAction.sequence([lightOn, wait, lightOff, wait])
+        run(SKAction.repeatForever(sequence), withKey: "lightningCountdown")
+    }
+    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -298,11 +370,15 @@ extension GameScene: SKPhysicsContactDelegate {
             if !target.isGoodItem {
                 trashItems += 1
                 animateAction(imageName: "shit", sprite: heaven)
+                wrongObject.play()
             } else {
                 animateAction(imageName: "heaven", sprite: heaven)
+                normalObject.play()
             }
             // проверим не поймали ли баян
             if target.isBayan { bayanCount += 1 }
+            // провери молнию
+            if target.isLightning { thunderAndLightning() }
             // удаляем объект с игровой сцены
             target.removeFromParent()
         default:

@@ -110,11 +110,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground_3" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-4f-Ptg">
-                                <rect key="frame" x="364" y="10" width="40" height="40"/>
+                                <rect key="frame" x="369" y="5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="X4d-cf-OiB"/>
                                     <constraint firstAttribute="height" constant="40" id="veO-RG-bjS"/>
@@ -124,35 +124,71 @@
                                     <action selector="closeButtonTap:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="EVH-ZV-8qR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test some text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64z-pd-trM">
-                                <rect key="frame" x="60" y="20" width="244" height="20"/>
-                                <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-vG-rQF">
+                                <rect key="frame" x="107" y="512" width="200" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x5-vG-6Jh">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="21"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
+                                        <state key="normal" title="ПРОГРАММИСТ" backgroundImage="quizBoardOne">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="fe5-W4-uOb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Uq-U49">
+                                        <rect key="frame" x="0.0" y="85" width="200" height="60"/>
+                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="23"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
+                                        <state key="normal" title="ХУДОЖНИК" backgroundImage="quizBoardTwo">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="gAc-mU-gda"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-0u-YQd">
+                                        <rect key="frame" x="0.0" y="170" width="200" height="60"/>
+                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
+                                        <state key="normal" title="ПРОДЮСЕР" backgroundImage="quizBoardFour">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="PvR-FI-lHg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="7io-53-GLf"/>
+                                    <constraint firstAttribute="width" constant="200" id="n46-fu-6u8"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="64z-pd-trM" firstAttribute="leading" secondItem="C7R-Tp-Ctt" secondAttribute="leading" constant="60" id="58e-wI-E6D"/>
-                            <constraint firstItem="hLl-aN-cP9" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" id="ARP-rw-9mc"/>
+                            <constraint firstItem="hLl-aN-cP9" firstAttribute="top" secondItem="tt0-vt-rE3" secondAttribute="top" id="ARP-rw-9mc"/>
                             <constraint firstAttribute="bottom" secondItem="hLl-aN-cP9" secondAttribute="bottom" id="Amm-Se-s5Z"/>
-                            <constraint firstItem="MCf-4f-Ptg" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" constant="10" id="H26-Uq-447"/>
-                            <constraint firstItem="MCf-4f-Ptg" firstAttribute="leading" secondItem="64z-pd-trM" secondAttribute="trailing" constant="60" id="RVq-rj-BSg"/>
-                            <constraint firstItem="64z-pd-trM" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" constant="20" id="kca-MP-OX4"/>
+                            <constraint firstItem="MCf-4f-Ptg" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" constant="5" id="H26-Uq-447"/>
+                            <constraint firstAttribute="bottom" secondItem="HKQ-vG-rQF" secondAttribute="bottom" constant="100" id="egu-w3-cn1"/>
+                            <constraint firstItem="HKQ-vG-rQF" firstAttribute="centerX" secondItem="tt0-vt-rE3" secondAttribute="centerX" id="hDd-hh-Z2A"/>
                             <constraint firstItem="hLl-aN-cP9" firstAttribute="leading" secondItem="C7R-Tp-Ctt" secondAttribute="leading" id="mMb-3s-RgW"/>
-                            <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="MCf-4f-Ptg" secondAttribute="trailing" constant="10" id="slu-wl-mu8"/>
+                            <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="MCf-4f-Ptg" secondAttribute="trailing" constant="5" id="slu-wl-mu8"/>
                             <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="hLl-aN-cP9" secondAttribute="trailing" id="to4-lX-p7u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C7R-Tp-Ctt"/>
                     </view>
                     <navigationItem key="navigationItem" id="gzx-OH-TmB"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="egu-w3-cn1" id="jEe-Oo-kC9"/>
                         <outlet property="closeButton" destination="MCf-4f-Ptg" id="NSc-ED-6Ry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4a-zB-Af5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907" y="-137"/>
+            <point key="canvasLocation" x="2905.7971014492755" y="-137.27678571428569"/>
         </scene>
         <!--Concert Choice View Controller-->
         <scene sceneID="w6Y-Ty-HLM">
@@ -253,7 +289,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-i5-vBv">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-i5-vBv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcV-eV-p1C">
@@ -385,13 +421,13 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="V7f-2u-sh2">
                                                                 <rect key="frame" x="0.0" y="235" width="313" height="49"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Процент правильных ответов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ykL-hH-z7k">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Процент правильных ответов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ykL-hH-z7k">
                                                                         <rect key="frame" x="0.0" y="0.0" width="269.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMv-44-5Xb">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMv-44-5Xb">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -826,6 +862,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" red="0.57647058823529407" green="0.51372549019607838" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="maC-i5-vBv" secondAttribute="bottom" id="6jj-95-nyA"/>
                             <constraint firstItem="maC-i5-vBv" firstAttribute="leading" secondItem="qhj-Dg-sQZ" secondAttribute="leading" id="9s2-xa-RMS"/>
@@ -1429,7 +1466,7 @@
         <image name="9_Color_Black" width="331" height="447"/>
         <image name="achBack" width="1125" height="2436"/>
         <image name="achBoard" width="1012" height="1445"/>
-        <image name="authorsBackground" width="1125" height="2436"/>
+        <image name="authorsBackground_3" width="1125" height="2436"/>
         <image name="back" width="1080" height="1920"/>
         <image name="buttonPlus" width="228" height="237"/>
         <image name="closeButtonMenu" width="300" height="118"/>

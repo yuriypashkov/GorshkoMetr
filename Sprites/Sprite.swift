@@ -30,4 +30,12 @@ extension Sprite {
         let newSequence = SKAction.repeatForever(actionGroup)
         self.run(newSequence)
     }
+    
+    func pushButtonEffect(scaleDown: CGFloat, scaleUp: CGFloat, duration: Double) {
+        let scaleDwn = SKAction.scale(by: scaleDown, duration: duration)
+        let scaleUpp = SKAction.scale(by: scaleUp, duration: duration)
+        let seq = SKAction.sequence([scaleDwn, scaleUpp])
+        let repeatSeq = SKAction.repeat(seq, count: 1)
+        run(repeatSeq)
+    }
 }

@@ -13,12 +13,22 @@ class GameViewController: UIViewController, TransitionDelegate {
     var scene = GameScene()
     var score: Int = 0 {
         didSet {
-            scoreLabel.text = String(score)
+            scoreLabel.text = getNewScore(newScore: score)
             defaults.set(score, forKey: "scoreKey")
         }
     }
     
     var scoreLabel = SKLabelNode()
+    
+    func getNewScore(newScore: Int) -> String {
+        let formatter = NumberFormatter()
+        let number = NSNumber(value: newScore)
+        formatter.minimumIntegerDigits = 6
+        if let resultScore = formatter.string(from: number) {
+            return resultScore
+        }
+        return ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +43,25 @@ class GameViewController: UIViewController, TransitionDelegate {
         scene.addChild(background)
         
         // add exit button
-        let exitButton = Sprite(named: "closeNew", x: scene.size.width / 2 + 200, y: 900, z: 1)
+        let exitButton = Sprite(named: "closeNew", x: scene.size.width / 2 + 350, y: 900, z: 1)
         exitButton.name = "exitButton"
         exitButton.setScale(0.8)
         scene.addChild(exitButton)
         
         // add rules button
-        let rulesButton = Sprite(named: "infoTwo", x: scene.size.width / 2 - 400, y: 900, z: 1)
+        let rulesButton = Sprite(named: "infoTwo", x: scene.size.width / 2 - 500, y: 900, z: 1)
         rulesButton.name = "rulesButton"
         rulesButton.setScale(0.8)
         scene.addChild(rulesButton)
         
         //adding buttons for control
-        print(UIScreen.main.bounds.width)
         
         //if UIScreen.main.bounds.width < 895 {
             addFourButtons(onWidth: 300, tab: 1650)
 //        } else {
 //            addFourButtons(onWidth: 100, tab: 2050)
 //        }
+        
         //adding test opora1 left top
         Block(position: CGPoint(x: 380, y: 830), rotation: -.pi / 7.0).addTo(parent: scene)
 
@@ -81,7 +91,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         score = defaults.integer(forKey: "scoreKey")
         
         //add scorelabel
-        scoreLabel.text = String(score)
+        //scoreLabel.text = String(score)
         scoreLabel.position = CGPoint(x: scene.size.width / 2, y: 930)
         scoreLabel.fontSize = 90
         scoreLabel.fontColor = .systemYellow
@@ -112,7 +122,7 @@ class GameViewController: UIViewController, TransitionDelegate {
     }
     
     func addingButton(imageName: String, name: String, position: CGPoint) {
-        let button = Sprite(named: imageName, x: position.x, y: position.y, z: 3)
+        let button = Sprite(named: imageName, x: position.x, y: position.y, z: 10)
         button.name = name
         button.setScale(1.1)
         scene.addChild(button)

@@ -32,9 +32,9 @@ class AchivementsViewController: UIViewController {
     @IBAction func achivmentButtonClick(_ sender: UIButton) {
         let achivement = achivementBank.achivementsArray[sender.tag]
         if achivement.isAchived {
-            setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message)
+            setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message, isHiddenShareButton: false)
         } else {
-            setAlert(imageName: achivement.imageName + "_Black", title: achivement.title, message: achivement.message)
+            setAlert(imageName: achivement.imageName + "_Black", title: achivement.title, message: achivement.message, isHiddenShareButton: true)
         }
         animateIn()
     }
@@ -105,12 +105,19 @@ class AchivementsViewController: UIViewController {
         }
     }
     
-    func setAlert(imageName: String, title: String, message: String) {
+    func setAlert(imageName: String, title: String, message: String, isHiddenShareButton: Bool) {
         alertView = Bundle.main.loadNibNamed("AchivementView", owner: self, options: nil)?.first as? AchivementView
         view.addSubview(alertView)
         alertView.center = view.center
         alertView.okButton.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
-        alertView.set(title: title, message: message, imageName: imageName)
+        alertView.shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
+        alertView.set(title: title, message: message, imageName: imageName, isHiddenShareButton: isHiddenShareButton )
+    }
+    
+    @objc func shareButtonPressed() {
+        let message = "Я получил новую ачивку \"\(String(describing: alertView.titleLabel.text!))\" в приложении Горшкометр"
+        let vc = UIActivityViewController(activityItems: [alertView.image.image!, message], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
     }
     
     

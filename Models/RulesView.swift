@@ -13,7 +13,7 @@ class RulesView {
         node.zPosition = 5
         node.position = CGPoint(x: 0, y: 0)
         // спрайт с окошком
-        let testSprite = Sprite(named: "rulesWindow", x: size.width / 2, y: size.height / 2, z: 5)
+        let testSprite = Sprite(named: "rulesWindow", x: size.width / 2, y: size.height / 2, z: 12)
         testSprite.setScale(1.5)
         testSprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         node.addChild(testSprite)
@@ -21,15 +21,15 @@ class RulesView {
         let background = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         background.fillColor = .white
         background.alpha = 0.8
-        background.zPosition = 4
+        background.zPosition = 11
         node.addChild(background)
         // кнопка Закрыть
-        let closeButton = Sprite(named: "closeButtonMenu", x: size.width / 2, y: 30, z: 6)
+        let closeButton = Sprite(named: "closeButtonMenu", x: size.width / 2, y: 30, z: 13)
         closeButton.anchorPoint = CGPoint(x: 0.5, y: 0)
         closeButton.name = "gameCloseRules"
         node.addChild(closeButton)
         // галочка При старте
-        checkbox = Sprite(named: "check", x: 850, y: 160, z: 6)
+        checkbox = Sprite(named: "check", x: 850, y: 160, z: 13)
         //checkbox.name = "gameCheckbox"
         node.addChild(checkbox)
         // поле для нажатия поверх галки
@@ -38,7 +38,7 @@ class RulesView {
         nodeForTap.fillColor = .clear
         nodeForTap.strokeColor = .clear
         nodeForTap.name = "gameCheckbox"
-        nodeForTap.zPosition = 7
+        nodeForTap.zPosition = 14
         node.addChild(nodeForTap)
     }
     
