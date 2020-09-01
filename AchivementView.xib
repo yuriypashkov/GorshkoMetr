@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,7 +22,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-ro-rtq" userLabel="ParentView">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="530"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="achivementBackgroundTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="drP-5O-L6T">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="achivementBackgroundTransparent_2" translatesAutoresizingMaskIntoConstraints="NO" id="drP-5O-L6T">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="530"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-sf-Pyf">
@@ -102,6 +102,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backgroundImage" destination="drP-5O-L6T" id="dkj-tJ-Fy6"/>
                 <outlet property="image" destination="zDu-uD-x3v" id="1IA-pE-MFI"/>
                 <outlet property="messageLabel" destination="myK-xT-krw" id="kaz-fX-N9M"/>
                 <outlet property="notShareLabel" destination="3hS-If-MFq" id="qDw-1G-Q9o"/>
@@ -114,7 +115,7 @@
     </objects>
     <resources>
         <image name="10_Color" width="331" height="472"/>
-        <image name="achivementBackgroundTransparent" width="1125" height="2436"/>
+        <image name="achivementBackgroundTransparent_2" width="1125" height="2436"/>
         <image name="closeNew" width="197" height="195"/>
         <image name="share" width="198" height="195"/>
     </resources>

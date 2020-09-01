@@ -3,16 +3,8 @@ import UIKit
 
 class NewMenuViewController: UIViewController {
 
-    @IBAction func closeButtonTap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBOutlet weak var closeButtonWidth: NSLayoutConstraint!
-    @IBOutlet weak var closeButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonsMenuHeight: NSLayoutConstraint!
     @IBOutlet weak var menuArt: UIImageView!
-    
-    @IBOutlet weak var achImage: UIImageView!
     
     let topViewController = UIApplication.shared.keyWindow?.rootViewController
     
@@ -42,12 +34,8 @@ class NewMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // уменьшаем  элементы меню для  SE первого поколения
         if UIScreen.main.bounds.height < 667 {
-            // уменьшаем кнопку закрытия меню
-            closeButtonWidth.constant = 110
-            closeButtonHeight.constant = 40
             // уменьшаем высоту стека с кнопками
             buttonsMenuHeight.constant = 250
         }
@@ -59,15 +47,6 @@ class NewMenuViewController: UIViewController {
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.imageTap(_:)))
         swipeGestureRecognizer.direction = .left
         menuArt.addGestureRecognizer(swipeGestureRecognizer)
-        
-        // для кнопки Хой
-//        let achivementBank = AchivementBank()
-//        for ach in achivementBank.achivementsArray {
-//            if ach.isAchived {
-//                achImage.isHidden = false
-//                break
-//            }
-//        }
         
     }
     

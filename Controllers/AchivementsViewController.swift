@@ -115,7 +115,7 @@ class AchivementsViewController: UIViewController {
     }
     
     @objc func shareButtonPressed() {
-        let message = "Я получил новую ачивку \"\(String(describing: alertView.titleLabel.text!))\" в приложении Горшкометр"
+        let message = "Я получил новую ачивку \"\(String(describing: alertView.titleLabel.text!))\", в приложении Горшкометр.  Совершённое действо: \"\(String(describing: alertView.messageLabel.text!))\"."
         let vc = UIActivityViewController(activityItems: [alertView.image.image!, message], applicationActivities: [])
         present(vc, animated: true, completion: nil)
     }

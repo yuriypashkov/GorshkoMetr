@@ -102,7 +102,7 @@ class GameViewController: UIViewController, TransitionDelegate {
 
         let skView = view as! SKView
         skView.showsFPS = true
-        //skView.showsNodeCount = true
+        skView.showsNodeCount = true
         //skView.showsPhysics = true
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)
