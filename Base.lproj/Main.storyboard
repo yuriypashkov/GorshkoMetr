@@ -16,7 +16,7 @@
         <!--Concert Metr-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ConcertMetr" id="BYZ-38-t0r" customClass="ConcertMetr" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConcertMetr" id="BYZ-38-t0r" customClass="ConcertMetr" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="90" id="Xf0-Mq-BIq"/>
                                     <constraint firstAttribute="width" constant="90" id="oRo-CA-1SP"/>
                                 </constraints>
-                                <state key="normal" image="buttonPlus"/>
+                                <state key="normal" image="buttonPlus_2"/>
                                 <connections>
                                     <action selector="buttonPlusTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIA-Zn-L1G"/>
                                 </connections>
@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="90" id="glO-ij-ask"/>
                                     <constraint firstAttribute="width" constant="90" id="ocZ-1f-ecv"/>
                                 </constraints>
-                                <state key="normal" title="X" image="closeNew">
+                                <state key="normal" title="X" image="closeNew_2">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -105,16 +105,16 @@
         <!--Authors View Controller-->
         <scene sceneID="pQ3-bD-pAi">
             <objects>
-                <viewController id="Eq0-zl-bmQ" customClass="AuthorsViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eq0-zl-bmQ" customClass="AuthorsViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tt0-vt-rE3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground_3" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground_4" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-4f-Ptg">
-                                <rect key="frame" x="369" y="5" width="40" height="40"/>
+                                <rect key="frame" x="354" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="X4d-cf-OiB"/>
                                     <constraint firstAttribute="height" constant="40" id="veO-RG-bjS"/>
@@ -125,16 +125,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ykk-Ot-Q3r">
-                                <rect key="frame" x="75" y="466" width="264" height="210"/>
+                                <rect key="frame" x="75" y="438.5" width="264" height="245"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Gg-KMA" userLabel="progSW">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x5-vG-6Jh" userLabel="prog">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="kgV-Of-cxC"/>
-                                                    <constraint firstAttribute="height" constant="60" id="lJa-cR-I6E"/>
+                                                    <constraint firstAttribute="width" constant="50" id="kgV-Of-cxC"/>
+                                                    <constraint firstAttribute="height" constant="50" id="lJa-cR-I6E"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="21"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
@@ -146,7 +146,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KDD-Vg-jBD">
-                                                <rect key="frame" x="70" y="20" width="194" height="20"/>
+                                                <rect key="frame" x="60" y="15" width="204" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -154,13 +154,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-dr-oSG" userLabel="artSW">
-                                        <rect key="frame" x="0.0" y="75" width="264" height="60"/>
+                                        <rect key="frame" x="0.0" y="65" width="264" height="50"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Uq-U49" userLabel="art">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Xrd-oT-EeD"/>
-                                                    <constraint firstAttribute="height" constant="60" id="bl0-UY-AwU"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Xrd-oT-EeD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bl0-UY-AwU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="23"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
@@ -172,7 +172,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="l6Y-Bm-LYD">
-                                                <rect key="frame" x="70" y="20" width="194" height="20"/>
+                                                <rect key="frame" x="60" y="15" width="204" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -180,13 +180,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-jA-EJL" userLabel="prodSW">
-                                        <rect key="frame" x="0.0" y="150" width="264" height="60"/>
+                                        <rect key="frame" x="0.0" y="130" width="264" height="50"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-0u-YQd" userLabel="producer">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="HoE-6e-UI6"/>
-                                                    <constraint firstAttribute="width" constant="60" id="SBT-R0-N6s"/>
+                                                    <constraint firstAttribute="height" constant="50" id="HoE-6e-UI6"/>
+                                                    <constraint firstAttribute="width" constant="50" id="SBT-R0-N6s"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="22"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
@@ -198,7 +198,29 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-qS-M6R">
-                                                <rect key="frame" x="70" y="20" width="194" height="20"/>
+                                                <rect key="frame" x="60" y="15" width="204" height="20"/>
+                                                <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B2Z-VE-50f" userLabel="musicSW">
+                                        <rect key="frame" x="0.0" y="195" width="264" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-iW-FVt">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="oQ9-j6-mho"/>
+                                                    <constraint firstAttribute="width" constant="50" id="sn2-We-0lc"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="instagramIcon"/>
+                                                <connections>
+                                                    <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="kUa-iz-9l8"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DJ4-0H-2Pl">
+                                                <rect key="frame" x="60" y="15" width="204" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -212,12 +234,12 @@
                         <constraints>
                             <constraint firstItem="hLl-aN-cP9" firstAttribute="top" secondItem="tt0-vt-rE3" secondAttribute="top" id="ARP-rw-9mc"/>
                             <constraint firstAttribute="bottom" secondItem="hLl-aN-cP9" secondAttribute="bottom" id="Amm-Se-s5Z"/>
-                            <constraint firstItem="Ykk-Ot-Q3r" firstAttribute="centerY" secondItem="tt0-vt-rE3" secondAttribute="centerY" constant="150" id="E26-6j-3qn"/>
-                            <constraint firstItem="MCf-4f-Ptg" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" constant="5" id="H26-Uq-447"/>
+                            <constraint firstItem="Ykk-Ot-Q3r" firstAttribute="centerY" secondItem="tt0-vt-rE3" secondAttribute="centerY" constant="140" id="E26-6j-3qn"/>
+                            <constraint firstItem="MCf-4f-Ptg" firstAttribute="top" secondItem="C7R-Tp-Ctt" secondAttribute="top" constant="20" id="H26-Uq-447"/>
                             <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="Ykk-Ot-Q3r" secondAttribute="trailing" constant="75" id="WRn-Sr-Brz"/>
                             <constraint firstItem="Ykk-Ot-Q3r" firstAttribute="leading" secondItem="C7R-Tp-Ctt" secondAttribute="leading" constant="75" id="jKN-hq-91b"/>
                             <constraint firstItem="hLl-aN-cP9" firstAttribute="leading" secondItem="C7R-Tp-Ctt" secondAttribute="leading" id="mMb-3s-RgW"/>
-                            <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="MCf-4f-Ptg" secondAttribute="trailing" constant="5" id="slu-wl-mu8"/>
+                            <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="MCf-4f-Ptg" secondAttribute="trailing" constant="20" id="slu-wl-mu8"/>
                             <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="hLl-aN-cP9" secondAttribute="trailing" id="to4-lX-p7u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C7R-Tp-Ctt"/>
@@ -226,6 +248,7 @@
                     <connections>
                         <outlet property="artLabel" destination="l6Y-Bm-LYD" id="EfT-Uu-Ky1"/>
                         <outlet property="closeButton" destination="MCf-4f-Ptg" id="NSc-ED-6Ry"/>
+                        <outlet property="musLabel" destination="DJ4-0H-2Pl" id="gdd-5m-4U2"/>
                         <outlet property="prodLabel" destination="lJu-qS-M6R" id="3Ji-62-12z"/>
                         <outlet property="progLabel" destination="KDD-Vg-jBD" id="2HX-Fh-7QF"/>
                         <outlet property="stackViewLeading" destination="jKN-hq-91b" id="U1h-SM-P3G"/>
@@ -239,7 +262,7 @@
         <!--Concert Choice View Controller-->
         <scene sceneID="w6Y-Ty-HLM">
             <objects>
-                <viewController storyboardIdentifier="ConcertChoiceViewController" id="kpn-mh-sL8" customClass="ConcertChoiceViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConcertChoiceViewController" id="kpn-mh-sL8" customClass="ConcertChoiceViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gi9-5g-eTB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +274,7 @@
                                 <rect key="frame" x="65" y="204" width="276" height="608"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConcertChoiceCell" rowHeight="50" id="2a2-gc-Qyj" customClass="ConcertChoiceCell" customModule="GorshkoMetr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConcertChoiceCell" rowHeight="50" id="2a2-gc-Qyj" customClass="ConcertChoiceCell" customModule="Горшкометр" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="276" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2a2-gc-Qyj" id="Xxj-9N-RaT">
@@ -330,7 +353,7 @@
         <!--Achivements View Controller-->
         <scene sceneID="P8J-6C-xXH">
             <objects>
-                <viewController storyboardIdentifier="AchivementsViewController" id="5yW-DC-ORr" customClass="AchivementsViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AchivementsViewController" id="5yW-DC-ORr" customClass="AchivementsViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VvW-4k-EiO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,7 +416,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie2-Qv-VaL">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ie2-Qv-VaL">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -413,7 +436,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXZ-Ub-qLO">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="LXZ-Ub-qLO">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -433,7 +456,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-bi-72V">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-bi-72V">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -453,7 +476,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZt-al-a7t">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VZt-al-a7t">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -468,12 +491,12 @@
                                                                 <rect key="frame" x="0.0" y="235" width="313" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Процент правильных ответов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ykL-hH-z7k">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="269.5" height="49"/>
-                                                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="49"/>
+                                                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMv-44-5Xb">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="PMv-44-5Xb">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -493,7 +516,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4W-CJ-u0b">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="q4W-CJ-u0b">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -507,13 +530,13 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HoL-Mx-Abh">
                                                                 <rect key="frame" x="0.0" y="352.5" width="313" height="49"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Персонажей в игре потеряно" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-uh-fbe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="269.5" height="49"/>
-                                                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персонажей в игре потеряно" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-uh-fbe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="249" height="49"/>
+                                                                        <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN7-jl-fPE">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="tN7-jl-fPE">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -533,7 +556,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-ER-PgU">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-ER-PgU">
                                                                         <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
@@ -962,7 +985,7 @@
         <!--New Quiz View Controller-->
         <scene sceneID="Jot-YQ-4rv">
             <objects>
-                <viewController storyboardIdentifier="NewQuizViewController" id="cKN-rq-bVN" customClass="NewQuizViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewQuizViewController" id="cKN-rq-bVN" customClass="NewQuizViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tje-jI-7M8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -996,7 +1019,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-Da-5K6">
-                                <rect key="frame" x="25" y="148" width="359" height="230.5"/>
+                                <rect key="frame" x="30" y="148" width="349" height="230.5"/>
                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1102,13 +1125,13 @@
                             <constraint firstAttribute="trailing" secondItem="ZiT-HS-h16" secondAttribute="trailing" constant="20" id="RF4-dW-v1Z"/>
                             <constraint firstAttribute="trailing" secondItem="Xrp-rJ-Crl" secondAttribute="trailing" constant="10" id="SJK-lt-biq"/>
                             <constraint firstItem="Xrp-rJ-Crl" firstAttribute="leading" secondItem="qc5-7J-PDo" secondAttribute="leading" constant="10" id="UEX-Ba-J2t"/>
-                            <constraint firstItem="YM8-Da-5K6" firstAttribute="leading" secondItem="dvc-0z-eu7" secondAttribute="leading" constant="15" id="UuY-d5-9bw"/>
+                            <constraint firstItem="YM8-Da-5K6" firstAttribute="leading" secondItem="dvc-0z-eu7" secondAttribute="leading" constant="20" id="UuY-d5-9bw"/>
                             <constraint firstItem="hen-cD-xcJ" firstAttribute="top" secondItem="Tje-jI-7M8" secondAttribute="top" id="bOx-W3-7cP"/>
                             <constraint firstItem="qc5-7J-PDo" firstAttribute="trailing" secondItem="hen-cD-xcJ" secondAttribute="trailing" id="bgg-IW-qk6"/>
                             <constraint firstItem="YM8-Da-5K6" firstAttribute="bottom" secondItem="dvc-0z-eu7" secondAttribute="bottom" constant="-35" id="fAN-4M-DgZ"/>
                             <constraint firstItem="Xrp-rJ-Crl" firstAttribute="top" secondItem="qc5-7J-PDo" secondAttribute="top" constant="10" id="fWJ-aS-dQJ"/>
                             <constraint firstItem="qc5-7J-PDo" firstAttribute="bottom" secondItem="Y62-5k-XOD" secondAttribute="bottom" constant="30" id="hiV-Z3-0xN"/>
-                            <constraint firstItem="YM8-Da-5K6" firstAttribute="trailing" secondItem="dvc-0z-eu7" secondAttribute="trailing" constant="-20" id="oda-1b-0Yx"/>
+                            <constraint firstItem="YM8-Da-5K6" firstAttribute="trailing" secondItem="dvc-0z-eu7" secondAttribute="trailing" constant="-25" id="oda-1b-0Yx"/>
                             <constraint firstAttribute="bottom" secondItem="hen-cD-xcJ" secondAttribute="bottom" id="wrC-AT-5Vt"/>
                             <constraint firstAttribute="bottom" secondItem="Xrp-rJ-Crl" secondAttribute="bottom" constant="10" id="ynv-DT-ujX"/>
                             <constraint firstItem="YM8-Da-5K6" firstAttribute="top" secondItem="dvc-0z-eu7" secondAttribute="top" constant="35" id="zsI-1K-ed3"/>
@@ -1140,7 +1163,7 @@
         <!--Game View Controller-->
         <scene sceneID="rbg-uW-EaM">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="bAC-S1-BVh" customClass="GameViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="bAC-S1-BVh" customClass="GameViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d2q-Z2-yJv" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1155,7 +1178,7 @@
         <!--New Menu View Controller-->
         <scene sceneID="v1n-0E-wkw">
             <objects>
-                <viewController storyboardIdentifier="NewMenuViewController" id="Mua-fF-vnK" customClass="NewMenuViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewMenuViewController" id="Mua-fF-vnK" customClass="NewMenuViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TZK-LN-mtN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1181,7 +1204,7 @@
                                         <rect key="frame" x="0.0" y="75" width="286.5" height="65.5"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
-                                        <state key="normal" title="ГоршкоКвиз" backgroundImage="quizBoardTwo">
+                                        <state key="normal" title="Квиз" backgroundImage="quizBoardTwo">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -1192,7 +1215,7 @@
                                         <rect key="frame" x="0.0" y="149.5" width="286.5" height="66"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
-                                        <state key="normal" title="Играй с Горшком" backgroundImage="quizBoardThree">
+                                        <state key="normal" title="Потеха" backgroundImage="quizBoardThree">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -1239,7 +1262,7 @@
         <!--Home View Controller-->
         <scene sceneID="RL3-UB-u85">
             <objects>
-                <viewController id="OpA-wY-rAa" customClass="HomeViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OpA-wY-rAa" customClass="HomeViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYC-Z2-vnW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1291,7 +1314,7 @@
         <!--Quiz Results View Controller-->
         <scene sceneID="X3a-BU-h4N">
             <objects>
-                <viewController storyboardIdentifier="QuizResultsViewController" id="KhB-P7-UkS" customClass="QuizResultsViewController" customModule="GorshkoMetr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizResultsViewController" id="KhB-P7-UkS" customClass="QuizResultsViewController" customModule="Горшкометр" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLZ-hu-Uvp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1339,7 +1362,7 @@
                                 <rect key="frame" x="0.0" y="60" width="414" height="748"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="190" id="Rts-YF-qG7" customClass="ResultCell" customModule="GorshkoMetr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="190" id="Rts-YF-qG7" customClass="ResultCell" customModule="Горшкометр" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rts-YF-qG7" id="PLI-mx-Ms3">
@@ -1486,10 +1509,11 @@
         <image name="9_Color_Black" width="331" height="447"/>
         <image name="achBack" width="1125" height="2436"/>
         <image name="achBoard" width="1012" height="1445"/>
-        <image name="authorsBackground_3" width="1125" height="2436"/>
+        <image name="authorsBackground_4" width="1125" height="2436"/>
         <image name="back" width="1080" height="1920"/>
-        <image name="buttonPlus" width="228" height="237"/>
+        <image name="buttonPlus_2" width="228" height="237"/>
         <image name="closeNew" width="197" height="195"/>
+        <image name="closeNew_2" width="197" height="195"/>
         <image name="concertMetrTwo" width="1125" height="2436"/>
         <image name="githubIcon" width="240" height="240"/>
         <image name="infoTwo" width="197" height="195"/>

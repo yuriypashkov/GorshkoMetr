@@ -13,7 +13,7 @@ class RulesView {
         node.zPosition = 5
         node.position = CGPoint(x: 0, y: 0)
         // спрайт с окошком
-        let testSprite = Sprite(named: "rulesViewNew_2", x: size.width / 2, y: size.height / 2, z: 12)
+        let testSprite = Sprite(named: "rulesViewNew_6", x: size.width / 2, y: size.height / 2, z: 12)
         testSprite.setScale(1.6)
         testSprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         node.addChild(testSprite)

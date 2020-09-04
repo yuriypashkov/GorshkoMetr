@@ -7,6 +7,7 @@ class AuthorsViewController: UIViewController {
     @IBOutlet weak var prodLabel: UILabel!
     @IBOutlet weak var artLabel: UILabel!
     @IBOutlet weak var progLabel: UILabel!
+    @IBOutlet weak var musLabel: UILabel!
     
     @IBOutlet weak var stackViewTrailing: NSLayoutConstraint!
     @IBOutlet weak var stackViewLeading: NSLayoutConstraint!
@@ -22,6 +23,10 @@ class AuthorsViewController: UIViewController {
             }
         case 2:
             if let url = URL(string: "https://www.instagram.com/misserchmitt/"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        case 3:
+            if let url = URL(string: "https://www.instagram.com/krll.wav/"), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
             }
         default:
@@ -53,6 +58,11 @@ class AuthorsViewController: UIViewController {
         prodLabel.text = """
         СТЕПАН
         идеи, продюсер
+        """
+        
+        musLabel.text = """
+        КИРИЛЛ
+        музыка в игре
         """
         
     }

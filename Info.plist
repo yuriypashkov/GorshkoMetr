@@ -20,6 +20,13 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Горшкометру нужен доступ к Фото для возможности сохранения ачивок</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>13165.otf</string>
+		<string>17488.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -52,13 +59,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>13165.otf</string>
-		<string>17488.ttf</string>
-	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Горшкометру нужен доступ к Фото для возможности сохранения ачивок</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

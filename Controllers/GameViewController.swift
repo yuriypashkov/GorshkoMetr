@@ -23,7 +23,7 @@ class GameViewController: UIViewController, TransitionDelegate {
     func getNewScore(newScore: Int) -> String {
         let formatter = NumberFormatter()
         let number = NSNumber(value: newScore)
-        formatter.minimumIntegerDigits = 6
+        formatter.minimumIntegerDigits = 7
         if let resultScore = formatter.string(from: number) {
             return resultScore
         }
@@ -75,16 +75,20 @@ class GameViewController: UIViewController, TransitionDelegate {
         Block(position: CGPoint(x: 2030, y: 820), rotation: .pi / 7.0).addTo(parent: scene)
         
         // new blocks
-        let leftTopBlock = Sprite(named: "branch_left_topNEW", x: 0, y: 600, z: 2)
+        let leftTopBlock = Sprite(named: "branch_left_topNEW", x: 0, y: 590, z: 2)
+        leftTopBlock.zRotation = .pi / 150
         scene.addChild(leftTopBlock)
         
         let leftBottomBlock = Sprite(named: "branch_left_bottomNEW", x: 0, y: 300, z: 2)
+        leftBottomBlock.zRotation = .pi / 150
         scene.addChild(leftBottomBlock)
         
-        let rightTopBlock = Sprite(named: "branch_right_topNEW", x: 1655, y: 600, z: 2)
+        let rightTopBlock = Sprite(named: "branch_right_topNEW", x: 1655, y: 615, z: 2)
+        rightTopBlock.zRotation = -.pi / 120
         scene.addChild(rightTopBlock)
         
-        let rightBottomBlock = Sprite(named: "branch_right_bottomNEW", x: 1600, y: 300, z: 2)
+        let rightBottomBlock = Sprite(named: "branch_right_bottomNEW", x: 1600, y: 315, z: 2)
+        rightBottomBlock.zRotation = -.pi / 90
         scene.addChild(rightBottomBlock)
         
         // get score
@@ -93,7 +97,7 @@ class GameViewController: UIViewController, TransitionDelegate {
         //add scorelabel
         //scoreLabel.text = String(score)
         scoreLabel.position = CGPoint(x: scene.size.width / 2, y: 930)
-        scoreLabel.fontSize = 90
+        scoreLabel.fontSize = 96
         scoreLabel.fontColor = .systemYellow
         scoreLabel.zPosition = 3
         scoreLabel.fontName = "CyrillicOldEditedbyme-Bold"
@@ -101,8 +105,8 @@ class GameViewController: UIViewController, TransitionDelegate {
         
 
         let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        //skView.showsFPS = true
+        //skView.showsNodeCount = true
         //skView.showsPhysics = true
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)

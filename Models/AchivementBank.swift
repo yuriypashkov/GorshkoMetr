@@ -20,10 +20,10 @@ class AchivementBank {
         Achivement(imageName: "12_Color", title: "Горшок", message: "Поймал 100 баянов", isAchived: false),
         Achivement(imageName: "13_Color", title: "Медаль за отвагу", message: "Запустил приложение 100 раз", isAchived: false),
         Achivement(imageName: "14_Color", title: "Ещё одна", message: "Запустил приложение 200 раз", isAchived: false),
-        Achivement(imageName: "15_Color", title: "Дурак и приложение", message: "Запускал приложение неделю подряд", isAchived: false),
-        Achivement(imageName: "16_Color", title: "Ты не знаешь, что такое жизнь", message: "Запускал приложение 2 недели подряд", isAchived: false),
-        Achivement(imageName: "17_Color", title: "Мертвый анархист", message: "Запускал приложение 3 недели подряд", isAchived: false),
-        Achivement(imageName: "18_Color", title: "Похороненный панк", message: "Запускал приложение 4 недели подряд", isAchived: false),
+        Achivement(imageName: "15_Color", title: "Дурак и приложение", message: "Запускал приложение 300 раз", isAchived: false),
+        Achivement(imageName: "16_Color", title: "Ты не знаешь, что такое жизнь", message: "Поймал 100 пивасиков в игре", isAchived: false),
+        Achivement(imageName: "17_Color", title: "Мертвый анархист", message: "Поймал 100 застывших факов в игре", isAchived: false),
+        Achivement(imageName: "18_Color", title: "Похороненный панк", message: "Поймал 100 грибов в игре", isAchived: false),
         Achivement(imageName: "19_Color", title: "Охотник", message: "Провёл в игре 1 минуту", isAchived: false),
         Achivement(imageName: "20_Color", title: "Мужик с мясом", message: "Провёл в игре 10 минут", isAchived: false),
         Achivement(imageName: "21_Color", title: "Лесник", message: "Провёл в игре 1 час", isAchived: false),
@@ -43,6 +43,10 @@ class AchivementBank {
     var bayanCount: Int
     var timeInGame: Int
     
+    var beerInGame: Int
+    var fuckInGame: Int
+    var mushroomInGame: Int
+    
     init() {
         countKey = defaults.integer(forKey: "countKey")
         scoreKey = defaults.integer(forKey: "scoreKey")
@@ -59,6 +63,10 @@ class AchivementBank {
         trashItems = defaults.integer(forKey: "trashItems")
         bayanCount = defaults.integer(forKey: "bayanCount")
         timeInGame = defaults.integer(forKey: "timeInGame")
+        
+        beerInGame = defaults.integer(forKey: "beerInGame")
+        fuckInGame = defaults.integer(forKey: "fuckInGame")
+        mushroomInGame = defaults.integer(forKey: "mushroomInGame")
         
         // ачивки за число концертов
         if countKey >= 1 { achivementsArray[0].isAchived = true }
@@ -82,8 +90,12 @@ class AchivementBank {
         // медальки за запуск
         if launchCount >= 100 { achivementsArray[13].isAchived = true}
         if launchCount >= 200 { achivementsArray[14].isAchived = true}
+        if launchCount >= 300 { achivementsArray[15].isAchived = true}
         
-        // за недели запуска
+        //новые ачивки
+        if beerInGame >= 100 { achivementsArray[16].isAchived = true }
+        if fuckInGame >= 100 { achivementsArray[17].isAchived = true }
+        if mushroomInGame >= 100 { achivementsArray[18].isAchived = true }
         
         // время в игре
         if timeInGame >= 60 { achivementsArray[19].isAchived = true }
