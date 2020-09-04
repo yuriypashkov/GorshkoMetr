@@ -171,17 +171,44 @@ class NewQuizViewController: UIViewController {
         } else {
             let result = Float (score) / Float(allQuestions.list.count) * 100
             var status = "none"
+            var message = "none"
             switch result {
-            case 0..<35:
-                status = "Поручик"
-            case 35..<67:
-                status =  "Князь"
+            case 0..<10:
+                status = "Неумеха"
+                message = "Тебе явно надо переслушать дискографию КиШа несколько раз, это никуда не годится."
+            case 10..<20:
+                status = "Салага"
+                message = "Откровенно говоря, результат очень слабый. Попробуй ещё, может быть это случайно так."
+            case 20..<30:
+                status = "Садовник"
+                message = "Отвечать на вопросы - это тебе не головы братьев в букеты класть. Срочно подтягивать матчасть!"
+            case 30..<40:
+                status = "Весёлый тролль"
+                message = "Ты не идеален в своих познаниях, но подарить праздник всем вокруг ты всё-таки можешь. Но расти есть куда."
+            case 40..<50:
+                status = "Лесник"
+                message = "Судя по всему, ты знаешь немало историй и можешь рассказать их всем желающим"
+            case 50..<60:
+                status = "Старик Алонс"
+                message = "Неплохой трюк, куда круче чем тот, что со стаканом. Попробуй ещё разок."
+            case 60..<70:
+                status = "Мастер"
+                message = "Работа мастера, сразу видно. Но в гости к тебе всё равно неохота, извини."
+            case 70..<80:
+                status = "Живой анархист"
+                message = "Крикнешь Хой - все пойдут за тобой. Твои познания в области Кишологии вызывают уважение."
+            case 80..<90:
+                status = "Смельчак"
+                message = "Почти идеально. Ты явно не из робких и последний рубеж тебе точно по плечу."
             default:
-                status = "Горшок"
+                status = "Михаил"
+                message = "Всё с тобой ясно, Миша. Для тебя нет секретов в этом квизе."
             }
             questionLabel.text = """
-            Поздравляем! Вы ответили правильно на \(score) из \(allQuestions.list.count) вопросов.\n
-            Ваш титул - \(status)
+            Хой! Правильных ответов: \(score) из \(allQuestions.list.count) вопросов.\n
+            Твой титул - \(status)
+            
+            \(message)
             """
             setButtonsHidden(state: true)
             quizPassed += 1
@@ -205,7 +232,7 @@ class NewQuizViewController: UIViewController {
     }
     
     func restartQuiz() {
-        allQuestions.createListOfData(questionCount: 7)
+        allQuestions.createListOfData(questionCount: 11)
         score = 0
         questionNumber = 0
         updateQuestion()

@@ -64,7 +64,7 @@ class QuestionBank {
     ]
     
     init() {
-        createListOfData(questionCount: 7)
+        createListOfData(questionCount: 11)
     }
     
     func createListOfData(questionCount: Int) {
