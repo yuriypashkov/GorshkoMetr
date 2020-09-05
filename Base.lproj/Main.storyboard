@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="90" id="glO-ij-ask"/>
                                     <constraint firstAttribute="width" constant="90" id="ocZ-1f-ecv"/>
                                 </constraints>
-                                <state key="normal" title="X" image="closeNew_2">
+                                <state key="normal" title="X" image="closeNew_3">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -110,7 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground_4" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorsBackground_5" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-aN-cP9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-4f-Ptg">
@@ -530,8 +530,8 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HoL-Mx-Abh">
                                                                 <rect key="frame" x="0.0" y="352.5" width="313" height="49"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персонажей в игре потеряно" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-uh-fbe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="249" height="49"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Предметов в игре потеряно" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-uh-fbe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="236.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1037,10 +1037,10 @@
                                             <action selector="refreshButtonTap:" destination="cKN-rq-bVN" eventType="touchUpInside" id="y6F-9l-dGe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-l8-rC6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-l8-rC6">
                                         <rect key="frame" x="194.5" y="0.0" width="179.5" height="50"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
-                                        <state key="normal" title="Подробнее" backgroundImage="quizBoardOne">
+                                        <state key="normal" title="Посмотреть ответы" backgroundImage="quizBoardOne">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -1204,7 +1204,7 @@
                                         <rect key="frame" x="0.0" y="75" width="286.5" height="65.5"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
-                                        <state key="normal" title="Квиз" backgroundImage="quizBoardTwo">
+                                        <state key="normal" title="Викторина" backgroundImage="quizBoardTwo">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -1509,11 +1509,11 @@
         <image name="9_Color_Black" width="331" height="447"/>
         <image name="achBack" width="1125" height="2436"/>
         <image name="achBoard" width="1012" height="1445"/>
-        <image name="authorsBackground_4" width="1125" height="2436"/>
+        <image name="authorsBackground_5" width="1125" height="2436"/>
         <image name="back" width="1080" height="1920"/>
         <image name="buttonPlus_2" width="228" height="237"/>
         <image name="closeNew" width="197" height="195"/>
-        <image name="closeNew_2" width="197" height="195"/>
+        <image name="closeNew_3" width="197" height="195"/>
         <image name="concertMetrTwo" width="1125" height="2436"/>
         <image name="githubIcon" width="240" height="240"/>
         <image name="infoTwo" width="197" height="195"/>

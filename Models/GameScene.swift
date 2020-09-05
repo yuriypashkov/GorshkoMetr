@@ -309,8 +309,8 @@ class GameScene: SKScene {
         if isHeroin { gorshokBlink() }
     }
     
-    func spawnTargets() {
-        if Int(arc4random()) % 1000 < 15 { // рандом-генератор частоты появления артов
+    func spawnTargets(frequency: Int) {
+        if Int(arc4random()) % 1000 < frequency { // рандом-генератор частоты появления артов
             spawnTargetInstantly()
         }
     }
@@ -410,8 +410,21 @@ class GameScene: SKScene {
         }
     }
     
+    
+    
     override func update(_ currentTime: TimeInterval) {
-        spawnTargets()
+        
+        let delegate = self.delegate
+        let myScore = (delegate as! TransitionDelegate).score
+        switch myScore {
+        case -10_000..<500:
+            spawnTargets(frequency: 5)
+        case 500..<2_000:
+            spawnTargets(frequency: 10)
+        default:
+            spawnTargets(frequency: 15)
+        }
+        
         enumerateTargets()
         // костыль чтоб не было пауз в появлении объектов ловли
         if self.childNode(withName: "target") == nil { spawnTargetInstantly() }

@@ -95,6 +95,8 @@ class NewQuizViewController: UIViewController {
             button.titleLabel?.textAlignment = .center
         }
         
+        buttonMore.titleLabel?.textAlignment = .center
+        
     }
     
     @objc func imageTap(_ sender: AnyObject) {
