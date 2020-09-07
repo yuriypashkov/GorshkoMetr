@@ -189,7 +189,7 @@ class GameScene: SKScene {
         }
         
         //add gorshok
-        gorshok = Sprite(named: "g_down_left", x: 1218, y: 440, z: 3)
+        gorshok = Sprite(named: "g_down_left", x: 1218, y: 440, z: 3, spritePosition: .leftBottom)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addChild(gorshok)
         
@@ -247,22 +247,38 @@ class GameScene: SKScene {
                 (delegate as! TransitionDelegate).dismissVC()
             case "controlLeftTop":
                 testSquare.position = arrayOfSquares[0]
-                gorshokUpdate(imageName: "g_up_left")
+                if !isHeroin {
+                    gorshokUpdate(imageName: "g_up_left", spritePosition: .leftTop)
+                } else {
+                    gorshokUpdate(imageName: "bayan_g_up_left", spritePosition: .leftTop)
+                }
                 keyClick.play()
                 controlLeftTop.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlLeftBottom":
                 testSquare.position = arrayOfSquares[1]
-                gorshokUpdate(imageName: "g_down_left")
+                if !isHeroin {
+                    gorshokUpdate(imageName: "g_down_left", spritePosition: .leftBottom)
+                } else {
+                    gorshokUpdate(imageName: "bayan_g_down_left", spritePosition: .leftBottom)
+                }
                 keyClick.play()
                 controlLeftBottom.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlRightTop":
                 testSquare.position = arrayOfSquares[3]
-                gorshokUpdate(imageName: "g_up_right")
+                if !isHeroin {
+                    gorshokUpdate(imageName: "g_up_right", spritePosition: .rightTop)
+                } else {
+                    gorshokUpdate(imageName: "bayan_g_up_right", spritePosition: .rightTop)
+                }
                 keyClick.play()
                 controlRightTop.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "controlRightBottom":
                 testSquare.position = arrayOfSquares[2]
-                gorshokUpdate(imageName: "g_down_right")
+                if !isHeroin {
+                    gorshokUpdate(imageName: "g_down_right", spritePosition: .rightBottom)
+                } else {
+                    gorshokUpdate(imageName: "bayan_g_down_right", spritePosition: .rightBottom)
+                }
                 keyClick.play()
                 controlRightBottom.pushButtonEffect(scaleDown: 0.9, scaleUp: 1.11, duration: 0.1)
             case "rulesButton":
@@ -288,9 +304,21 @@ class GameScene: SKScene {
     
     var isRewardTwice = false
     
+    func setTextureOnButton(texturePrefix: String) {
+        controlLeftTop.texture = SKTexture(imageNamed: texturePrefix + "_left_up")
+        controlLeftBottom.texture = SKTexture(imageNamed: texturePrefix + "_left_down")
+        controlRightTop.texture = SKTexture(imageNamed: texturePrefix + "_right_up")
+        controlRightBottom.texture = SKTexture(imageNamed: texturePrefix + "_right_down")
+    }
+    
     var isButtonSwapped = false
     
     func swapButtons() {
+        if !isButtonSwapped {
+            setTextureOnButton(texturePrefix: "vomit")
+        } else {
+            setTextureOnButton(texturePrefix: "button")
+        }
         let tempPositionTop = controlLeftTop.position
         let tempPositionBottom = controlLeftBottom.position
         controlLeftTop.position = controlRightTop.position
@@ -301,9 +329,9 @@ class GameScene: SKScene {
         mushroomSound.play()
     }
     
-    func gorshokUpdate(imageName: String) {
+    func gorshokUpdate(imageName: String, spritePosition: SpritePosition) {
         gorshok.removeFromParent()
-        gorshok = Sprite(named: imageName, x: 1218, y: 440, z: 3)
+        gorshok = Sprite(named: imageName, x: 1218, y: 440, z: 3, spritePosition: spritePosition)
         gorshok.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         addChild(gorshok)
         if isHeroin { gorshokBlink() }
@@ -561,6 +589,8 @@ extension GameScene: SKPhysicsContactDelegate {
             case .syringe:
                 bayanCount += 1
                 isHeroin = true
+                let newImageName = "bayan_" + gorshok.currentImageName
+                gorshokUpdate(imageName: newImageName, spritePosition: gorshok.spritePosition)
                 gorshokBlink()
                 testSquare.removeFromParent()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {

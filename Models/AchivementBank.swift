@@ -1,7 +1,6 @@
 
 import Foundation
 
-
 class AchivementBank {
     
     var achivementsArray: [Achivement] = [
