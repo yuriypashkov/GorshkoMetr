@@ -32,6 +32,9 @@ class ConcertChoiceViewController: UIViewController, CellProtocolDelegate {
         backImage.isUserInteractionEnabled = true
         backImage.addGestureRecognizer(swipeGestureRecognizer)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageSwipe(_:)))
+        backImage.addGestureRecognizer(tapGestureRecognizer)
+        
         tableView.backgroundColor = .clear
     }
     

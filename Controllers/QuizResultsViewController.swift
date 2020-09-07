@@ -9,6 +9,10 @@ class QuizResultsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     @IBOutlet weak var buttonClose: UIButton!
     
     override func viewDidLoad() {

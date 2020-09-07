@@ -34,10 +34,14 @@ class AuthorsViewController: UIViewController {
         }
     }
     
+    override var shouldAutorotate: Bool {
+        return false
+    }
     
     @IBAction func closeButtonTap(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13, *) { closeButton.isHidden = true }

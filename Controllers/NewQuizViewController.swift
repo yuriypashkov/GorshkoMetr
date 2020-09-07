@@ -127,6 +127,7 @@ class NewQuizViewController: UIViewController {
             setButtonImage(tag: sender.tag, imageState: "True", sender: sender)
         } else {
             setButtonImage(tag: sender.tag, imageState: "False", sender: sender)
+            setButtonImage(tag: selectedAnswer, imageState: "True", sender: arrayOfButtons[selectedAnswer-1])
         }
         
         //добавляем данные в массив ответов

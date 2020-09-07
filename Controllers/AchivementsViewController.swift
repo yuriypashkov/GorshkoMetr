@@ -33,6 +33,8 @@ class AchivementsViewController: UIViewController {
         let achivement = achivementBank.achivementsArray[sender.tag]
         if achivement.isAchived {
             setAlert(imageName: achivement.imageName, title: achivement.title, message: achivement.message, isHiddenShareButton: false)
+            // записать Ачивка просмотрена
+            // скрыть маркер с sender.tag
         } else {
             setAlert(imageName: achivement.imageName + "_Black", title: achivement.title, message: achivement.message, isHiddenShareButton: true)
         }
@@ -82,6 +84,7 @@ class AchivementsViewController: UIViewController {
                 button.setImage(UIImage(named: imageName), for: .normal)
             }
         }
+        // установить непросмотренные ачивки аналогичным образом
 
     }
     
