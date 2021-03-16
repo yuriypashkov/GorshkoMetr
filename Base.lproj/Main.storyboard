@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OpA-wY-rAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OpA-wY-rAa">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,24 +26,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="UNA-KE-eXw" userLabel="LabelStackView">
-                                <rect key="frame" x="30" y="35" width="260" height="115.5"/>
+                                <rect key="frame" x="30" y="35" width="260" height="147"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Концертов КиШа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ne8-k3-AsE">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="36.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="47"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="36"/>
-                                        <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGray5Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="всего просмотрено:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="yLL-yC-JQ3">
-                                        <rect key="frame" x="0.0" y="39.5" width="260" height="36.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="260" height="47"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="36"/>
-                                        <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGray5Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-ba-bax">
-                                        <rect key="frame" x="119.5" y="79" width="21" height="36.5"/>
+                                        <rect key="frame" x="119" y="100" width="22.5" height="47"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="40"/>
-                                        <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGray5Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -65,14 +66,15 @@
                                     <constraint firstAttribute="width" constant="90" id="ocZ-1f-ecv"/>
                                 </constraints>
                                 <state key="normal" title="X" image="closeNew_3">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="tapClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZiC-fG-qNA"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UNA-KE-eXw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="2uP-fr-awa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gia-ro-94d" secondAttribute="trailing" constant="40" id="EqT-m3-ALW"/>
@@ -86,7 +88,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="glS-hL-33C" secondAttribute="bottom" constant="20" id="iNA-10-i2n"/>
                             <constraint firstItem="glS-hL-33C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yul-70-CAf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonPlusHeightConstraint" destination="Xf0-Mq-BIq" id="24j-Aq-lJH"/>
@@ -130,7 +131,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Gg-KMA" userLabel="progSW">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x5-vG-6Jh" userLabel="prog">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x5-vG-6Jh" userLabel="prog">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="kgV-Of-cxC"/>
@@ -139,14 +140,14 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="21"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
                                                 <state key="normal" backgroundImage="githubIcon">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="fe5-W4-uOb"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KDD-Vg-jBD">
-                                                <rect key="frame" x="60" y="17.5" width="110" height="15.5"/>
+                                                <rect key="frame" x="60" y="15" width="110" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -156,7 +157,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-dr-oSG" userLabel="artSW">
                                         <rect key="frame" x="0.0" y="65" width="170" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Uq-U49" userLabel="art">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Uq-U49" userLabel="art">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="Xrd-oT-EeD"/>
@@ -165,14 +166,14 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="23"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
                                                 <state key="normal" backgroundImage="instagramIcon">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="gAc-mU-gda"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="l6Y-Bm-LYD">
-                                                <rect key="frame" x="60" y="17.5" width="110" height="15.5"/>
+                                                <rect key="frame" x="60" y="15" width="110" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -182,7 +183,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-jA-EJL" userLabel="prodSW">
                                         <rect key="frame" x="0.0" y="130" width="170" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-0u-YQd" userLabel="producer">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-0u-YQd" userLabel="producer">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="HoE-6e-UI6"/>
@@ -191,14 +192,14 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="22"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
                                                 <state key="normal" backgroundImage="instagramIcon">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonClick:" destination="Eq0-zl-bmQ" eventType="touchUpInside" id="PvR-FI-lHg"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-qS-M6R">
-                                                <rect key="frame" x="60" y="17.5" width="110" height="15.5"/>
+                                                <rect key="frame" x="60" y="15" width="110" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -208,7 +209,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B2Z-VE-50f" userLabel="musicSW">
                                         <rect key="frame" x="0.0" y="195" width="170" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-iW-FVt">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-iW-FVt">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oQ9-j6-mho"/>
@@ -220,7 +221,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DJ4-0H-2Pl">
-                                                <rect key="frame" x="60" y="17.5" width="110" height="15.5"/>
+                                                <rect key="frame" x="60" y="15" width="110" height="20"/>
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -230,7 +231,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="C7R-Tp-Ctt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hLl-aN-cP9" firstAttribute="top" secondItem="tt0-vt-rE3" secondAttribute="top" id="ARP-rw-9mc"/>
                             <constraint firstAttribute="bottom" secondItem="hLl-aN-cP9" secondAttribute="bottom" id="Amm-Se-s5Z"/>
@@ -242,7 +244,6 @@
                             <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="MCf-4f-Ptg" secondAttribute="trailing" constant="20" id="slu-wl-mu8"/>
                             <constraint firstItem="C7R-Tp-Ctt" firstAttribute="trailing" secondItem="hLl-aN-cP9" secondAttribute="trailing" id="to4-lX-p7u"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="C7R-Tp-Ctt"/>
                     </view>
                     <navigationItem key="navigationItem" id="gzx-OH-TmB"/>
                     <connections>
@@ -272,7 +273,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n3g-I4-Agd">
                                 <rect key="frame" x="65" y="160" width="182" height="358"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConcertChoiceCell" rowHeight="50" id="2a2-gc-Qyj" customClass="ConcertChoiceCell" customModule="Горшкометр" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="182" height="50"/>
@@ -288,7 +289,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="172.5" height="50"/>
                                                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                             <state key="normal" backgroundImage="quizBoardFour">
-                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="titleColor" systemColor="labelColor"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="buttonTap:" destination="2a2-gc-Qyj" eventType="touchUpInside" id="dcs-de-MoE"/>
@@ -297,7 +298,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-Dl-yZc">
                                                             <rect key="frame" x="2.5" y="9" width="172.5" height="32"/>
                                                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="35"/>
-                                                            <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" systemColor="systemGray5Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -325,6 +326,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="v3C-Zb-KC2"/>
                         <constraints>
                             <constraint firstItem="n3g-I4-Agd" firstAttribute="top" secondItem="v3C-Zb-KC2" secondAttribute="top" constant="160" id="0V5-8H-dbQ"/>
                             <constraint firstItem="v3C-Zb-KC2" firstAttribute="trailing" secondItem="n3g-I4-Agd" secondAttribute="trailing" constant="73" id="3J6-rh-97b"/>
@@ -335,7 +337,6 @@
                             <constraint firstItem="v3C-Zb-KC2" firstAttribute="bottom" secondItem="n3g-I4-Agd" secondAttribute="bottom" constant="50" id="hx1-Gg-ORs"/>
                             <constraint firstItem="gvV-vc-k8s" firstAttribute="top" secondItem="gi9-5g-eTB" secondAttribute="top" id="qqc-O8-lvI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="v3C-Zb-KC2"/>
                     </view>
                     <navigationItem key="navigationItem" id="he5-sU-OLB"/>
                     <connections>
@@ -371,7 +372,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Достижения" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-fu-RuB">
-                                                        <rect key="frame" x="109" y="16.5" width="157" height="27.5"/>
+                                                        <rect key="frame" x="99.5" y="12.5" width="176" height="35"/>
                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -383,7 +384,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="huO-sX-wQy"/>
                                                         </constraints>
                                                         <state key="normal" image="closeNew">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="closeButtonTap:" destination="5yW-DC-ORr" eventType="touchUpInside" id="CA6-JI-nV6"/>
@@ -411,13 +412,13 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Концертов просмотрено" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zXR-PN-ibd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="202" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ie2-Qv-VaL">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="49"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -431,13 +432,13 @@
                                                                 <rect key="frame" x="0.0" y="59" width="313" height="48.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очков в игре набрано" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nJu-kD-LqT">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="48.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="207.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="LXZ-Ub-qLO">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="48.5"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -451,13 +452,13 @@
                                                                 <rect key="frame" x="0.0" y="117.5" width="313" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правильных ответов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-hC-i5x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="196" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-bi-72V">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="49"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -471,13 +472,13 @@
                                                                 <rect key="frame" x="0.0" y="176.5" width="313" height="48.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Викторин пройдено" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EVx-eB-tzw">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="48.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VZt-al-a7t">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="48.5"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -491,13 +492,13 @@
                                                                 <rect key="frame" x="0.0" y="235" width="313" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Процент правильных ответов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ykL-hH-z7k">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="228" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="PMv-44-5Xb">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="49"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -511,13 +512,13 @@
                                                                 <rect key="frame" x="0.0" y="294" width="313" height="48.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Запусков приложения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-Fh-zC8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="48.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="q4W-CJ-u0b">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="48.5"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -531,13 +532,13 @@
                                                                 <rect key="frame" x="0.0" y="352.5" width="313" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Предметов в игре потеряно" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-uh-fbe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="211.5" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="236.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="tN7-jl-fPE">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="49"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="49"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -551,13 +552,13 @@
                                                                 <rect key="frame" x="0.0" y="411.5" width="313" height="48.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Плохих предметов взято" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8GK-Iu-aFl">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="212" height="48.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="234" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-ER-PgU">
-                                                                        <rect key="frame" x="300" y="0.0" width="13" height="48.5"/>
+                                                                        <rect key="frame" x="299.5" y="0.0" width="13.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="24"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -931,6 +932,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qhj-Dg-sQZ"/>
                         <color key="backgroundColor" red="0.57647058823529407" green="0.51372549019607838" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="maC-i5-vBv" secondAttribute="bottom" id="6jj-95-nyA"/>
@@ -938,7 +940,6 @@
                             <constraint firstItem="qhj-Dg-sQZ" firstAttribute="trailing" secondItem="maC-i5-vBv" secondAttribute="trailing" id="jNG-AB-QsK"/>
                             <constraint firstItem="maC-i5-vBv" firstAttribute="top" secondItem="VvW-4k-EiO" secondAttribute="top" id="kzO-9o-T6T"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qhj-Dg-sQZ"/>
                     </view>
                     <size key="freeformSize" width="375" height="1800"/>
                     <connections>
@@ -1027,21 +1028,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZiT-HS-h16" userLabel="Скрытые кнопки">
                                 <rect key="frame" x="20" y="459" width="280" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gw-Qo-tFS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gw-Qo-tFS">
                                         <rect key="frame" x="0.0" y="0.0" width="132.5" height="50"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                         <state key="normal" title="Ещё разок" backgroundImage="quizBoardTwo">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="refreshButtonTap:" destination="cKN-rq-bVN" eventType="touchUpInside" id="y6F-9l-dGe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-l8-rC6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-l8-rC6">
                                         <rect key="frame" x="147.5" y="0.0" width="132.5" height="50"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                         <state key="normal" title="Посмотреть ответы" backgroundImage="quizBoardOne">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="KhB-P7-UkS" kind="show" id="tnC-m0-NvN"/>
@@ -1063,7 +1064,7 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                                                 <state key="normal" title="ButtonOne" backgroundImage="quizBoardOne">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="LdR-QX-hrT"/>
@@ -1074,7 +1075,7 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                                                 <state key="normal" title="ButtonTwo" backgroundImage="quizBoardTwo">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="sNo-oh-eR9"/>
@@ -1090,7 +1091,7 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                                                 <state key="normal" title="ButtonThree" backgroundImage="quizBoardThree">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="nzR-Nk-m5z"/>
@@ -1101,7 +1102,7 @@
                                                 <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="19"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
                                                 <state key="normal" title="ButtonFour" backgroundImage="quizBoardFour">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="cKN-rq-bVN" eventType="touchUpInside" id="Bd0-ZK-NM9"/>
@@ -1115,7 +1116,8 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qc5-7J-PDo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hen-cD-xcJ" firstAttribute="leading" secondItem="qc5-7J-PDo" secondAttribute="leading" id="0AK-vf-rON"/>
                             <constraint firstItem="ZiT-HS-h16" firstAttribute="centerY" secondItem="Tje-jI-7M8" secondAttribute="centerY" constant="200" id="9Q9-3L-Uvb"/>
@@ -1136,7 +1138,6 @@
                             <constraint firstAttribute="bottom" secondItem="Xrp-rJ-Crl" secondAttribute="bottom" constant="10" id="ynv-DT-ujX"/>
                             <constraint firstItem="YM8-Da-5K6" firstAttribute="top" secondItem="dvc-0z-eu7" secondAttribute="top" constant="35" id="zsI-1K-ed3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qc5-7J-PDo"/>
                     </view>
                     <connections>
                         <outlet property="answersStackView" destination="Y62-5k-XOD" id="MhC-Rq-suD"/>
@@ -1167,8 +1168,8 @@
                     <view key="view" contentMode="scaleToFill" id="d2q-Z2-yJv" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Hdg-ai-B7Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAV-W1-Spa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1189,45 +1190,45 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-6I-i6r" userLabel="MenuButtons">
                                 <rect key="frame" x="20" y="89" width="217" height="290"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0P-Rd-9HC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0P-Rd-9HC">
                                         <rect key="frame" x="0.0" y="0.0" width="217" height="66"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                                         <state key="normal" title="Концертометр" backgroundImage="quizBoardOne">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="concertsButtonTap:" destination="Mua-fF-vnK" eventType="touchUpInside" id="3N0-G7-uae"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnO-3m-6dv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnO-3m-6dv">
                                         <rect key="frame" x="0.0" y="75" width="217" height="65.5"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
                                         <state key="normal" title="Викторина" backgroundImage="quizBoardTwo">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="quizButtonTap:" destination="Mua-fF-vnK" eventType="touchUpInside" id="2qd-Mt-7ir"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-AG-6II">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-AG-6II">
                                         <rect key="frame" x="0.0" y="149.5" width="217" height="66"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
                                         <state key="normal" title="Потеха" backgroundImage="quizBoardThree">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="gameButtonTap:" destination="Mua-fF-vnK" eventType="touchUpInside" id="X7x-jr-uLS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-0X-FOK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-0X-FOK">
                                         <rect key="frame" x="0.0" y="224.5" width="217" height="65.5"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
                                         <state key="normal" title="Достижения" backgroundImage="quizBoardFour">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="achivementsButtonTap:" destination="Mua-fF-vnK" eventType="touchUpInside" id="Nra-lv-yk5"/>
@@ -1239,6 +1240,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fyL-WW-xgL"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Xmv-UC-ew8" secondAttribute="bottom" id="FOt-Q9-oJD"/>
                             <constraint firstItem="c5c-6I-i6r" firstAttribute="centerY" secondItem="TZK-LN-mtN" secondAttribute="centerY" constant="-50" id="KNR-cR-URW"/>
@@ -1248,7 +1250,6 @@
                             <constraint firstAttribute="trailing" secondItem="c5c-6I-i6r" secondAttribute="trailing" multiplier="1.35" id="YKM-z4-Ool"/>
                             <constraint firstItem="Xmv-UC-ew8" firstAttribute="leading" secondItem="TZK-LN-mtN" secondAttribute="leading" id="xFH-nP-dDh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fyL-WW-xgL"/>
                     </view>
                     <connections>
                         <outlet property="buttonsMenuHeight" destination="FNL-zf-ljP" id="75k-bu-LCi"/>
@@ -1293,7 +1294,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="x0W-lK-JYE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wLX-xq-TgL" secondAttribute="bottom" id="6T6-Ph-Ff6"/>
                             <constraint firstItem="x0W-lK-JYE" firstAttribute="trailing" secondItem="wLX-xq-TgL" secondAttribute="trailing" id="LYB-zF-AOw"/>
@@ -1304,7 +1306,6 @@
                             <constraint firstItem="eDF-DY-vAO" firstAttribute="top" secondItem="x0W-lK-JYE" secondAttribute="top" constant="10" id="uDC-MK-Ims"/>
                             <constraint firstItem="wLX-xq-TgL" firstAttribute="leading" secondItem="x0W-lK-JYE" secondAttribute="leading" id="xqJ-FP-RZx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="x0W-lK-JYE"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylZ-Ex-hzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1326,7 +1327,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результаты" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pB-Fi-Xqv">
-                                        <rect key="frame" x="71.5" y="15" width="177" height="30"/>
+                                        <rect key="frame" x="70" y="11" width="180.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1338,7 +1339,7 @@
                                             <constraint firstAttribute="width" constant="40" id="U3s-QX-vOI"/>
                                         </constraints>
                                         <state key="normal" image="closeNew">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="buttonCloseClick:" destination="KhB-P7-UkS" eventType="touchUpInside" id="mBR-jG-xKd"/>
@@ -1360,7 +1361,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="190" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtH-mb-nbH">
                                 <rect key="frame" x="0.0" y="60" width="320" height="488"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="190" id="Rts-YF-qG7" customClass="ResultCell" customModule="Горшкометр" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="190"/>
@@ -1376,28 +1377,28 @@
                                                     <rect key="frame" x="5" y="10" width="310" height="170"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос №" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-cT-ATS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="36.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="121" height="39"/>
                                                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст вопроса" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-My-tmL">
-                                                            <rect key="frame" x="0.0" y="46.5" width="310" height="32"/>
+                                                            <rect key="frame" x="0.0" y="49" width="310" height="34.5"/>
                                                             <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="22"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xZW-XI-UaI">
-                                                            <rect key="frame" x="0.0" y="88.5" width="310" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="93.5" width="310" height="31.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш ответ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0K-nh-v8l">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="31.5"/>
                                                                     <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Верный ответ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqt-dX-uu3">
-                                                                    <rect key="frame" x="180" y="0.0" width="130" height="29.5"/>
+                                                                    <rect key="frame" x="180" y="0.0" width="130" height="31.5"/>
                                                                     <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1405,16 +1406,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="HAg-wz-TOy">
-                                                            <rect key="frame" x="0.0" y="128" width="310" height="42"/>
+                                                            <rect key="frame" x="0.0" y="135" width="310" height="35"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ответ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q98-Mv-JiD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="42"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                                                     <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="16"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ответ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4sQ-8C-Qnf">
-                                                                    <rect key="frame" x="180" y="0.0" width="130" height="42"/>
+                                                                    <rect key="frame" x="180" y="0.0" width="130" height="35"/>
                                                                     <fontDescription key="fontDescription" name="CyrillicOldEditedbyme-Bold" family="CyrillicOld [Edited by me]" pointSize="16"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1459,6 +1460,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VzI-JA-ypm"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KtH-mb-nbH" firstAttribute="leading" secondItem="VzI-JA-ypm" secondAttribute="leading" id="BaK-KM-aEU"/>
@@ -1469,7 +1471,6 @@
                             <constraint firstItem="vI2-wO-0aL" firstAttribute="leading" secondItem="VzI-JA-ypm" secondAttribute="leading" id="uiY-IP-Le4"/>
                             <constraint firstItem="KtH-mb-nbH" firstAttribute="bottom" secondItem="VzI-JA-ypm" secondAttribute="bottom" id="wKh-8K-wYK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VzI-JA-ypm"/>
                     </view>
                     <navigationItem key="navigationItem" id="tqw-a5-syF"/>
                     <connections>
@@ -1529,5 +1530,65 @@
         <image name="quizClose" width="301" height="119"/>
         <image name="quizWindow" width="968" height="665"/>
         <image name="scrollBackTwo" width="1125" height="2436"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
